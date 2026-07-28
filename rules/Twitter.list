@@ -4,7 +4,7 @@
 # UPSTREAM: https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Surge/Twitter
 # POLICY: conservative; exact service ownership over shared infrastructure
 # REMOVED: PROCESS-NAME, USER-AGENT, DOMAIN-KEYWORD and shared-cloud catch-alls
-# TOTAL: 32
+# TOTAL: 33
 
 DOMAIN-SUFFIX,ads-twitter.com
 DOMAIN-SUFFIX,cms-twdigitalassets.com
@@ -31,6 +31,7 @@ DOMAIN-SUFFIX,twttr.com
 DOMAIN-SUFFIX,twttr.net
 DOMAIN-SUFFIX,twvid.com
 DOMAIN-SUFFIX,vine.co
+DOMAIN-SUFFIX,x.ai
 DOMAIN-SUFFIX,x.com
 IP-CIDR,192.133.76.0/22,no-resolve
 IP-CIDR,199.59.148.0/22,no-resolve

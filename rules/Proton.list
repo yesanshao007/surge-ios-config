@@ -1,0 +1,8 @@
+# NAME: Proton
+# SCOPE: Surge iOS
+# AUDITED: 2026-07-28
+# POLICY: service-owned domains only
+# TOTAL: 2
+
+DOMAIN-SUFFIX,proton.me
+DOMAIN-SUFFIX,protonmail.ch

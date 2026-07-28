@@ -1,0 +1,8 @@
+# NAME: USJ
+# SCOPE: Surge iOS
+# AUDITED: 2026-07-28
+# POLICY: service domain plus the exact required recommendation endpoint
+# TOTAL: 2
+
+DOMAIN,js.rtoaster.jp
+DOMAIN-SUFFIX,usj.co.jp

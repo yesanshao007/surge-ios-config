@@ -1,0 +1,8 @@
+# NAME: TMDB
+# SCOPE: Surge iOS
+# AUDITED: 2026-07-28
+# POLICY: service-owned domains only
+# TOTAL: 2
+
+DOMAIN-SUFFIX,themoviedb.org
+DOMAIN-SUFFIX,tmdb.org
