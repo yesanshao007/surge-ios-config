@@ -1,7 +1,0 @@
-# NAME: Custom JP
-# 仅放需要固定使用日本策略的公开、非敏感规则。
-
-DOMAIN,js.rtoaster.jp
-DOMAIN-SUFFIX,mgstage.com
-DOMAIN-SUFFIX,usj.co.jp
-DOMAIN-SUFFIX,whatshub.top

@@ -1,7 +1,0 @@
-# NAME: Custom US
-# 仅放需要固定使用美国策略的公开、非敏感规则。
-
-DOMAIN-SUFFIX,codedex.io
-DOMAIN-SUFFIX,mcusercontent.com
-DOMAIN-SUFFIX,perplexity.ai
-DOMAIN-SUFFIX,x.ai
