@@ -1,0 +1,45 @@
+# NAME: GitHub
+# SCOPE: Surge iOS
+# AUDITED: 2026-07-28
+# UPSTREAM: https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Surge/GitHub
+# POLICY: conservative; exact service ownership over shared infrastructure
+# REMOVED: PROCESS-NAME, USER-AGENT, DOMAIN-KEYWORD and shared-cloud catch-alls
+# TOTAL: 37
+
+DOMAIN,default.exp-tas.com
+DOMAIN-SUFFIX,atom.io
+DOMAIN-SUFFIX,business.githubcopilot.com
+DOMAIN-SUFFIX,dependabot.com
+DOMAIN-SUFFIX,enterprise.githubcopilot.com
+DOMAIN-SUFFIX,ghcr.io
+DOMAIN-SUFFIX,ghe.com
+DOMAIN-SUFFIX,git.io
+DOMAIN-SUFFIX,github-atom-io-herokuapp-com.freetls.fastly.net
+DOMAIN-SUFFIX,github-avatars.oss-cn-hongkong.aliyuncs.com
+DOMAIN-SUFFIX,github-cloud.s3.amazonaws.com
+DOMAIN-SUFFIX,github.blog
+DOMAIN-SUFFIX,github.com
+DOMAIN-SUFFIX,github.community
+DOMAIN-SUFFIX,github.dev
+DOMAIN-SUFFIX,github.io
+DOMAIN-SUFFIX,githubapp.com
+DOMAIN-SUFFIX,githubassets.com
+DOMAIN-SUFFIX,githubcopilot.com
+DOMAIN-SUFFIX,githubhackathon.com
+DOMAIN-SUFFIX,githubnext.com
+DOMAIN-SUFFIX,githubpreview.dev
+DOMAIN-SUFFIX,githubstatus.com
+DOMAIN-SUFFIX,githubuniverse.com
+DOMAIN-SUFFIX,githubusercontent.com
+DOMAIN-SUFFIX,individual.githubcopilot.com
+DOMAIN-SUFFIX,myoctocat.com
+DOMAIN-SUFFIX,npm.community
+DOMAIN-SUFFIX,npmjs.com
+DOMAIN-SUFFIX,npmjs.org
+DOMAIN-SUFFIX,opensource.guide
+DOMAIN-SUFFIX,rawgit.com
+DOMAIN-SUFFIX,rawgithub.com
+DOMAIN-SUFFIX,repo.new
+DOMAIN-SUFFIX,thegithubshop.com
+DOMAIN-WILDCARD,copilot-reports-*.b01.azurefd.net
+DOMAIN-WILDCARD,usagereports*.blob.core.windows.net

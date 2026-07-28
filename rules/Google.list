@@ -1,0 +1,28 @@
+# NAME: Google
+# SCOPE: Surge iOS
+# AUDITED: 2026-07-28
+# UPSTREAM: https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Surge/Google
+# POLICY: conservative; exact service ownership over shared infrastructure
+# REMOVED: PROCESS-NAME, USER-AGENT, DOMAIN-KEYWORD and shared-cloud catch-alls
+# TOTAL: 20
+
+DOMAIN-SUFFIX,android.com
+DOMAIN-SUFFIX,appspot.com
+DOMAIN-SUFFIX,blogger.com
+DOMAIN-SUFFIX,blogspot.com
+DOMAIN-SUFFIX,firebaseapp.com
+DOMAIN-SUFFIX,firebaseio.com
+DOMAIN-SUFFIX,g.co
+DOMAIN-SUFFIX,gmail.com
+DOMAIN-SUFFIX,google.com
+DOMAIN-SUFFIX,google.com.hk
+DOMAIN-SUFFIX,googleapis.com
+DOMAIN-SUFFIX,googleusercontent.com
+DOMAIN-SUFFIX,gstatic.com
+DOMAIN-SUFFIX,recaptcha.net
+DOMAIN-SUFFIX,withgoogle.com
+IP-CIDR,172.110.32.0/21,no-resolve
+IP-CIDR,173.194.0.0/16,no-resolve
+IP-CIDR,216.73.80.0/20,no-resolve
+IP-CIDR,74.125.0.0/16,no-resolve
+IP-CIDR6,2620:120:e000::/40,no-resolve
