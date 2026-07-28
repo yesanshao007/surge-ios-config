@@ -1,0 +1,105 @@
+# NAME: AdBlock Safe
+# PURPOSE: 保守型广告域名规则；不包含 DOMAIN-KEYWORD、IP 段或共享 CDN
+# 将整份规则指向可切换的 AdBlock 策略组。
+
+# Google 广告
+DOMAIN-SUFFIX,doubleclick.net
+DOMAIN-SUFFIX,googlesyndication.com
+DOMAIN-SUFFIX,googleadservices.com
+DOMAIN-SUFFIX,googleadsserving.cn
+DOMAIN,pagead2.googlesyndication.com
+DOMAIN,adservice.google.com
+
+# Microsoft / Yahoo 广告
+DOMAIN,ads.microsoft.com
+DOMAIN,ads.msn.com
+DOMAIN-SUFFIX,advertising.com
+DOMAIN,gemini.yahoo.com
+
+# 国际移动广告平台
+DOMAIN-SUFFIX,adcolony.com
+DOMAIN-SUFFIX,adnxs.com
+DOMAIN-SUFFIX,adsrvr.org
+DOMAIN-SUFFIX,chartboost.com
+DOMAIN-SUFFIX,criteo.com
+DOMAIN-SUFFIX,criteo.net
+DOMAIN-SUFFIX,fyber.com
+DOMAIN-SUFFIX,inmobi.com
+DOMAIN-SUFFIX,inner-active.mobi
+DOMAIN-SUFFIX,ironsrc.com
+DOMAIN-SUFFIX,moatads.com
+DOMAIN-SUFFIX,mopub.com
+DOMAIN-SUFFIX,pubmatic.com
+DOMAIN-SUFFIX,rubiconproject.com
+DOMAIN-SUFFIX,smaato.net
+DOMAIN-SUFFIX,startappservice.com
+DOMAIN-SUFFIX,tapjoy.com
+DOMAIN-SUFFIX,unityads.unity3d.com
+DOMAIN-SUFFIX,vungle.com
+
+# 穿山甲 / Pangle
+DOMAIN-SUFFIX,pangolin-sdk-toutiao.com
+DOMAIN-SUFFIX,pangle.io
+DOMAIN,ad.zijieapi.com
+DOMAIN,ads3-normal.zijieapi.com
+DOMAIN,log-api.pangolin-sdk-toutiao.com
+
+# 腾讯广告
+DOMAIN-SUFFIX,gdt.qq.com
+DOMAIN,e.qq.com
+DOMAIN,ad.qq.com
+DOMAIN,adping.qq.com
+DOMAIN,adpm.app.qq.com
+DOMAIN,adsfile.qq.com
+DOMAIN,adsview.qq.com
+DOMAIN,adsview2.qq.com
+DOMAIN,mi.gdt.qq.com
+
+# 百度广告
+DOMAIN,mobads.baidu.com
+DOMAIN,mobads-logs.baidu.com
+DOMAIN,cpro.baidu.com
+DOMAIN,pos.baidu.com
+DOMAIN,union.baidu.com
+
+# 阿里广告（只拦截明确广告端点，不拦截埋点/风控）
+DOMAIN-SUFFIX,tanx.com
+DOMAIN,afp.alicdn.com
+DOMAIN,afpapi.alimama.com
+DOMAIN,atanx.alicdn.com
+DOMAIN,click.simba.taobao.com
+DOMAIN,redirect.simba.taobao.com
+
+# 京东广告
+DOMAIN,ads.union.jd.com
+DOMAIN,c-nfa.jd.com
+DOMAIN,cm.jd.com
+DOMAIN,jcm.jd.com
+DOMAIN,jzt.jd.com
+
+# 微博广告专用端点
+DOMAIN,ad.weibo.com
+DOMAIN,adimg.uve.weibo.com
+DOMAIN,alitui.weibo.com
+DOMAIN,biz.weibo.com
+DOMAIN,promote.biz.weibo.cn
+DOMAIN,sdkapp.uve.weibo.com
+
+# 小米 / OPPO / vivo 广告
+DOMAIN,ad.mi.com
+DOMAIN,ad.xiaomi.com
+DOMAIN,adv.sec.miui.com
+DOMAIN,api.ad.xiaomi.com
+DOMAIN,adsfs.oppomobile.com
+DOMAIN,ads.oppomobile.com
+DOMAIN,adx.ads.oppomobile.com
+DOMAIN,adlog.vivo.com.cn
+DOMAIN,ads-marketing-vivofs.vivo.com.cn
+DOMAIN,adsdk.vivo.com.cn
+
+# 其他明确广告平台
+DOMAIN-SUFFIX,admaster.com.cn
+DOMAIN-SUFFIX,adsame.com
+DOMAIN-SUFFIX,duomeng.cn
+DOMAIN-SUFFIX,voiceads.cn
+DOMAIN-SUFFIX,umengjmacs.com

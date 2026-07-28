@@ -1,0 +1,15 @@
+#!name=微博轻量去广告
+#!desc=仅拒绝明确广告接口，不改写首页、时间线、搜索、评论或用户资料
+#!author=yesanshao007
+#!requirement=SYSTEM = 'iOS'
+
+[URL Rewrite]
+^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkconfig\.php(?:\?|$) - reject
+^https?:\/\/(?:preload-click|preload-impression)\.uve\.weibo\.com\/(?:interface\/wbpullad\/wbpullad_click\.php|wbapplua\/get_wbpullad_log\.lua)(?:\?|$) - reject
+^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?(?:[^#]*&)?a=get_coopen_ads(?:&|$) - reject
+^https?:\/\/tqt\.weibo\.cn\/overall\/redirect\.php\?.*(?:r=tqtad|tqt_sdkad) - reject
+^https?:\/\/tqt\.weibo\.cn\/api\/advert\/ - reject
+^https?:\/\/tqt\.weibo\.cn\/.+advert\.index - reject
+
+[MITM]
+hostname = %APPEND% sdkapp.uve.weibo.com, preload-click.uve.weibo.com, preload-impression.uve.weibo.com, weibointl.api.weibo.cn, tqt.weibo.cn

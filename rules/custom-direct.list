@@ -1,0 +1,7 @@
+# NAME: Custom Direct
+# 仅放“必须直连”的个人规则；一行一个规则，不写策略。
+
+DOMAIN-SUFFIX,bytedance.com
+DOMAIN-SUFFIX,zijieapi.com
+DOMAIN-SUFFIX,pancake.apple.com
+DOMAIN-SUFFIX,itunes.apple.com

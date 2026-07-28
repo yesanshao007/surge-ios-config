@@ -1,0 +1,32 @@
+# NAME: Allow Direct
+# PURPOSE: 高优先级兼容规则，必须放在广告规则之前
+# 只放系统连通性、证书、推送和明确需要直连的精确端点。
+
+# Apple 系统连通性、证书与推送
+DOMAIN,captive.apple.com
+DOMAIN,configuration.apple.com
+DOMAIN,mesu.apple.com
+DOMAIN,ocsp.apple.com
+DOMAIN,ocsp2.apple.com
+DOMAIN,valid.apple.com
+DOMAIN-SUFFIX,push.apple.com
+DOMAIN-SUFFIX,push-apple.com.akadns.net
+
+# 常见证书状态服务
+DOMAIN,ocsp.digicert.com
+DOMAIN,crl3.digicert.com
+DOMAIN,crl4.digicert.com
+DOMAIN,ocsp.sectigo.com
+DOMAIN,ocsp.usertrust.com
+
+# 网络连通性探测
+DOMAIN,cp.cloudflare.com
+DOMAIN,www.msftconnecttest.com
+DOMAIN,dns.msftncsi.com
+DOMAIN,connectivitycheck.gstatic.com
+
+# 国内登录与风控（旧配置中已确认需要直连）
+DOMAIN-SUFFIX,dun.163.com
+DOMAIN-SUFFIX,163yun.com
+DOMAIN,msg.qy.net
+DOMAIN-SUFFIX,bocichina.com

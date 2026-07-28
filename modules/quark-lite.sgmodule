@@ -1,0 +1,10 @@
+#!name=夸克轻量去广告
+#!desc=只清理 open-cms 响应中的 cms_ 配置；单脚本、透明实现、解析失败原样放行
+#!author=yesanshao007
+#!requirement=SYSTEM = 'iOS'
+
+[Script]
+quark-cms-clean = type=http-response, pattern=^https?:\/\/open-cms-api\.(?:uc|quark)\.cn\/open-cms(?:\/|\?|$), requires-body=true, max-size=1048576, timeout=5, script-path=https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/scripts/quark-clean.js
+
+[MITM]
+hostname = %APPEND% open-cms-api.uc.cn, open-cms-api.quark.cn

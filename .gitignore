@@ -1,0 +1,22 @@
+# GitHub 只发布 Surge 会远程调用的规则、模块、重写和运行脚本。
+# 配置、文档、维护工具和仓库自动化仅保留在本地。
+/README.md
+/SECURITY.md
+/docs/
+/profiles/
+/.github/
+/.gitattributes
+/scripts/*.py
+
+# 以下文件包含订阅 URL、代理凭据、控制器设置或 MITM CA，绝不提交。
+/Custom-IPLC-iOS.conf
+/Github 429.sgmodule
+/夸克去广告.sgmodule
+/微博去广告.sgmodule
+/阿里云盘签到.sgmodule
+/private/
+/*.p12
+/*.mobileconfig
+/.DS_Store
+__pycache__/
+*.pyc
