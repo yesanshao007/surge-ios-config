@@ -1,5 +1,5 @@
 #!name=微博轻量去广告
-#!desc=仅拒绝明确广告接口，不改写首页、时间线、搜索、评论或用户资料
+#!desc=拒绝明确广告接口，并仅从首页/关注时间线移除带明确广告标记的条目
 #!author=yesanshao007
 #!requirement=SYSTEM = 'iOS'
 
@@ -11,5 +11,8 @@
 ^https?:\/\/tqt\.weibo\.cn\/api\/advert\/ - reject
 ^https?:\/\/tqt\.weibo\.cn\/.+advert\.index - reject
 
+[Script]
+weibo-feed-clean = type=http-response, pattern=^https?:\/\/m?api\.weibo\.(?:cn|com)\/\d+\/(?:statuses\/(?:friends\/timeline|unread_friends(?:\/|_)timeline|unread_hot_timeline)|groups\/timeline)(?:\?|$), requires-body=true, max-size=3145728, timeout=5, script-path=https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/scripts/weibo-feed-clean.js
+
 [MITM]
-hostname = %APPEND% sdkapp.uve.weibo.com, preload-click.uve.weibo.com, preload-impression.uve.weibo.com, weibointl.api.weibo.cn, tqt.weibo.cn
+hostname = %APPEND% sdkapp.uve.weibo.com, preload-click.uve.weibo.com, preload-impression.uve.weibo.com, weibointl.api.weibo.cn, tqt.weibo.cn, api.weibo.cn, api.weibo.com, mapi.weibo.cn, mapi.weibo.com
