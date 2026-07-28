@@ -1,5 +1,0 @@
-# NAME: Custom Proxy
-# 仅放“必须代理”的个人规则；一行一个规则，不写策略。
-
-DOMAIN-SUFFIX,tmdb.org
-DOMAIN-SUFFIX,themoviedb.org
