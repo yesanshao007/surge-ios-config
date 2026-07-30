@@ -1,5 +1,5 @@
 #!name=微博轻量去广告
-#!desc=拒绝明确广告接口，并仅从首页/关注时间线移除带明确广告标记的条目
+#!desc=清理开屏及首页、关注、热门、卡片、发现和视频流中的明确广告；不修改账号与功能界面
 #!author=yesanshao007
 #!requirement=SYSTEM = 'iOS'
 
@@ -12,7 +12,12 @@
 ^https?:\/\/tqt\.weibo\.cn\/.+advert\.index - reject
 
 [Script]
-weibo-feed-clean = type=http-response, pattern=^https?:\/\/m?api\.weibo\.(?:cn|com)\/\d+\/(?:statuses\/(?:friends\/timeline|unread_friends(?:\/|_)timeline|unread_hot_timeline)|groups\/timeline)(?:\?|$), requires-body=true, max-size=3145728, timeout=5, script-path=https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/scripts/weibo-feed-clean.js
+weibo-splash-boot-clean = type=http-response, pattern=^https?:\/\/boot[^/]*\.weibo\.com\/v\d+\/ad\/(?:preload|realtime)(?:\?|$), requires-body=true, max-size=2097152, timeout=5, script-path=https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/scripts/weibo-splash-clean.js
+weibo-splash-sdk-clean = type=http-response, pattern=^https?:\/\/(?:sdk|wb)app\.uve\.weibo\.com\/(?:interface\/sdk\/sdkad\.php|wbapplua\/wbpullad\.lua|preload\/get_ad)(?:\?|$), requires-body=true, max-size=2097152, timeout=5, script-path=https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/scripts/weibo-splash-clean.js
+weibo-splash-api-clean = type=http-response, pattern=^https?:\/\/api\.weibo\.cn\/\d+\/ad\/preload(?:\?|$), requires-body=true, max-size=2097152, timeout=5, script-path=https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/scripts/weibo-splash-clean.js
+weibo-timeline-clean = type=http-response, pattern=^https?:\/\/m?api\.weibo\.(?:cn|com)\/\d+\/(?:statuses\/(?:friends(?:\/|_)timeline|unread_friends(?:\/|_)timeline|unread_hot_timeline|container_timeline(?:_hot|_topic|_topicpage|_unread)?|video_mixtimeline|unread_topic_timeline)|statuses_unread_hot_timeline|groups\/timeline|\w{5}\/(?:statuses_unread_hot_timeline|timeline))(?:\?|$), requires-body=true, max-size=5242880, timeout=5, script-path=https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/scripts/weibo-feed-clean.js
+weibo-card-clean = type=http-response, pattern=^https?:\/\/m?api\.weibo\.(?:cn|com)\/\d+\/(?:(?:\w{5}\/)?cardlist|page|searchall|search\/(?:finder|container_timeline|container_discover)|container\/(?:asyn|get_item)|flow(?:list|page)|messageflow(?:\/notice)?)(?:\?|$), requires-body=true, max-size=5242880, timeout=5, script-path=https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/scripts/weibo-feed-clean.js
+weibo-media-clean = type=http-response, pattern=^https?:\/\/m?api\.weibo\.(?:cn|com)\/\d+\/(?:video\/(?:community_tab|tiny_stream_video_list|tiny_stream_mid_detail)|stories\/(?:video_stream|home_list)|photo\/recommend_list|service\/picfeed|comments\/build_comments)(?:\?|$), requires-body=true, max-size=5242880, timeout=5, script-path=https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/scripts/weibo-feed-clean.js
 
 [MITM]
-hostname = %APPEND% sdkapp.uve.weibo.com, preload-click.uve.weibo.com, preload-impression.uve.weibo.com, weibointl.api.weibo.cn, tqt.weibo.cn, api.weibo.cn, api.weibo.com, mapi.weibo.cn, mapi.weibo.com
+hostname = %APPEND% sdkapp.uve.weibo.com, wbapp.uve.weibo.com, preload-click.uve.weibo.com, preload-impression.uve.weibo.com, boot.biz.weibo.com, bootpreload.uve.weibo.com, bootrealtime.uve.weibo.com, weibointl.api.weibo.cn, tqt.weibo.cn, api.weibo.cn, api.weibo.com, mapi.weibo.cn, mapi.weibo.com
