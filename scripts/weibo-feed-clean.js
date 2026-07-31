@@ -11,8 +11,26 @@ const originalBody = $response.body;
 
 const adLabels = new Set(["广告", "廣告", "热推", "熱推"]);
 const adCardTypes = new Set([118, 180, 1007]);
-const arrayKeys = ["statuses", "items", "cards", "card_group"];
-const wrapperKeys = ["data", "result", "payload", "header"];
+const arrayKeys = [
+  "statuses",
+  "items",
+  "cards",
+  "card_group",
+  "banners",
+  "banner_list",
+  "card_list",
+];
+const wrapperKeys = [
+  "data",
+  "result",
+  "payload",
+  "header",
+  "content",
+  "container",
+  "module",
+];
+const labelContainerPattern =
+  /(?:^|_)(?:ad|ads|advert|advertise|badge|label|mark|tag)(?:_|$)/i;
 
 function isObject(value) {
   return value !== null && typeof value === "object" && !Array.isArray(value);
@@ -30,6 +48,54 @@ function hasAdSource(value) {
     source.includes("res_from:ads") ||
     source.includes("ads_word")
   );
+}
+
+function isPositiveAdValue(value) {
+  if (value === true || value === 1 || value === "1") {
+    return true;
+  }
+
+  const text = normalized(value);
+  return text === "ad" || text === "ads" || adLabels.has(value);
+}
+
+function hasStructuredAdLabel(value, depth = 0, insideLabelContainer = false) {
+  if (depth > 6 || value === null || value === undefined) {
+    return false;
+  }
+
+  if (typeof value === "string") {
+    return insideLabelContainer && adLabels.has(value.trim());
+  }
+
+  if (Array.isArray(value)) {
+    return value.some((entry) =>
+      hasStructuredAdLabel(entry, depth + 1, insideLabelContainer)
+    );
+  }
+
+  if (!isObject(value)) {
+    return false;
+  }
+
+  for (const [key, entry] of Object.entries(value)) {
+    // Child feed/card arrays are evaluated entry by entry. Do not let a label
+    // buried in one child cause the whole surrounding section to be removed.
+    if (arrayKeys.includes(key)) {
+      continue;
+    }
+
+    const nextInside =
+      insideLabelContainer ||
+      labelContainerPattern.test(key) ||
+      ["title_extra_text", "card_type_name"].includes(key);
+
+    if (hasStructuredAdLabel(entry, depth + 1, nextInside)) {
+      return true;
+    }
+  }
+
+  return false;
 }
 
 function getCandidates(entry) {
@@ -93,6 +159,10 @@ function isMarkedAd(entry, advertiseIds) {
     }
   }
 
+  const hasMblog =
+    isObject(entry.mblog) ||
+    isObject(entry.data?.mblog);
+
   for (const candidate of getCandidates(entry)) {
     if (
       adLabels.has(candidate.mblogtypename) ||
@@ -104,14 +174,26 @@ function isMarkedAd(entry, advertiseIds) {
       hasAdSource(candidate.actionlog?.ext) ||
       hasAdSource(candidate.itemid) ||
       hasAdSource(candidate.itemId) ||
-      candidate.is_ad === true ||
-      candidate.is_ad === 1 ||
-      candidate.isAd === true ||
-      candidate.isAd === 1 ||
+      isPositiveAdValue(candidate.is_ad) ||
+      isPositiveAdValue(candidate.isAd) ||
+      isPositiveAdValue(candidate.ad_state) ||
+      isPositiveAdValue(candidate.adState) ||
+      isPositiveAdValue(candidate.ad_flag) ||
+      isPositiveAdValue(candidate.adFlag) ||
+      isPositiveAdValue(candidate.ad_mark) ||
+      isPositiveAdValue(candidate.adMark) ||
+      isPositiveAdValue(candidate.ad_label) ||
+      isPositiveAdValue(candidate.adLabel) ||
       adCardTypes.has(candidate.card_type)
     ) {
       return true;
     }
+  }
+
+  // Promotional banner cards often have no mblog object. Their visible
+  // "广告" badge is nested under a badge/label/tag container instead.
+  if (!hasMblog && hasStructuredAdLabel(entry)) {
+    return true;
   }
 
   // This is an established Weibo card marker used inside nested action data.
@@ -120,11 +202,33 @@ function isMarkedAd(entry, advertiseIds) {
     const serialized = JSON.stringify(entry).toLowerCase();
     return (
       serialized.includes("res_from:ads") ||
-      serialized.includes("\"ads_word\"")
+      serialized.includes("\"ads_word\"") ||
+      /[?&](?:adid|ad_id|adsid|creative_id|campaign_id)=/i.test(serialized)
     );
   } catch {
     return false;
   }
+}
+
+function isEmptyContentGroup(entry) {
+  for (const candidate of [entry, entry?.data]) {
+    if (!isObject(candidate)) {
+      continue;
+    }
+
+    const contentArrays = arrayKeys.filter((key) =>
+      Array.isArray(candidate[key])
+    );
+
+    if (
+      contentArrays.length > 0 &&
+      contentArrays.every((key) => candidate[key].length === 0)
+    ) {
+      return true;
+    }
+  }
+
+  return false;
 }
 
 function cleanArray(entries, advertiseIds, depth) {
@@ -137,7 +241,14 @@ function cleanArray(entries, advertiseIds, depth) {
       continue;
     }
 
-    removed += cleanContainer(entry, advertiseIds, depth + 1);
+    const nestedRemoved = cleanContainer(entry, advertiseIds, depth + 1);
+    removed += nestedRemoved;
+
+    if (nestedRemoved > 0 && isEmptyContentGroup(entry)) {
+      removed += 1;
+      continue;
+    }
+
     output.push(entry);
   }
 
