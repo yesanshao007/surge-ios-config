@@ -9,8 +9,8 @@
 
 const originalBody = $response.body;
 
-const adLabels = new Set(["广告", "廣告", "热推", "熱推"]);
-const adCardTypes = new Set([118, 180, 1007]);
+const explicitAdLabels = new Set(["广告", "廣告"]);
+const promotedPostLabels = new Set(["广告", "廣告", "热推", "熱推"]);
 const arrayKeys = [
   "statuses",
   "items",
@@ -18,6 +18,8 @@ const arrayKeys = [
   "card_group",
   "banners",
   "banner_list",
+  "carousel",
+  "carousel_list",
   "card_list",
 ];
 const wrapperKeys = [
@@ -28,6 +30,20 @@ const wrapperKeys = [
   "content",
   "container",
   "module",
+];
+const adObjectKeys = [
+  "banner",
+  "banner_data",
+  "top_banner",
+  "ad_banner",
+  "carousel",
+];
+const hotSearchKeys = [
+  "hotwords",
+  "hot_words",
+  "hot_search",
+  "search_words",
+  "trends",
 ];
 const labelContainerPattern =
   /(?:^|_)(?:ad|ads|advert|advertise|badge|label|mark|tag)(?:_|$)/i;
@@ -56,7 +72,7 @@ function isPositiveAdValue(value) {
   }
 
   const text = normalized(value);
-  return text === "ad" || text === "ads" || adLabels.has(value);
+  return text === "ad" || text === "ads" || explicitAdLabels.has(value);
 }
 
 function hasStructuredAdLabel(value, depth = 0, insideLabelContainer = false) {
@@ -65,7 +81,7 @@ function hasStructuredAdLabel(value, depth = 0, insideLabelContainer = false) {
   }
 
   if (typeof value === "string") {
-    return insideLabelContainer && adLabels.has(value.trim());
+    return insideLabelContainer && explicitAdLabels.has(value.trim());
   }
 
   if (Array.isArray(value)) {
@@ -165,9 +181,9 @@ function isMarkedAd(entry, advertiseIds) {
 
   for (const candidate of getCandidates(entry)) {
     if (
-      adLabels.has(candidate.mblogtypename) ||
-      adLabels.has(candidate.adType) ||
-      adLabels.has(candidate.content_auth_info?.content_auth_title) ||
+      promotedPostLabels.has(candidate.mblogtypename) ||
+      explicitAdLabels.has(candidate.adType) ||
+      explicitAdLabels.has(candidate.content_auth_info?.content_auth_title) ||
       normalized(candidate.promotion?.type) === "ad" ||
       hasAdSource(candidate.page_info?.actionlog?.source) ||
       hasAdSource(candidate.actionlog?.source) ||
@@ -183,8 +199,7 @@ function isMarkedAd(entry, advertiseIds) {
       isPositiveAdValue(candidate.ad_mark) ||
       isPositiveAdValue(candidate.adMark) ||
       isPositiveAdValue(candidate.ad_label) ||
-      isPositiveAdValue(candidate.adLabel) ||
-      adCardTypes.has(candidate.card_type)
+      isPositiveAdValue(candidate.adLabel)
     ) {
       return true;
     }
@@ -205,33 +220,61 @@ function isMarkedAd(entry, advertiseIds) {
     ).toLowerCase();
     return (
       serialized.includes("res_from:ads") ||
-      serialized.includes("\"ads_word\"") ||
-      /[?&](?:adid|ad_id|adsid|creative_id|campaign_id)=/i.test(serialized)
+      /[?&](?:adid|ad_id|adsid|creative_id)=/i.test(serialized)
     );
   } catch {
     return false;
   }
 }
 
-function isEmptyContentGroup(entry) {
-  for (const candidate of [entry, entry?.data]) {
-    if (!isObject(candidate)) {
-      continue;
+function getContentArrayStats(value, depth = 0) {
+  if (!isObject(value) || depth > 3) {
+    return { arrays: 0, entries: 0 };
+  }
+
+  let arrays = 0;
+  let entries = 0;
+
+  for (const key of arrayKeys) {
+    if (Array.isArray(value[key])) {
+      arrays += 1;
+      entries += value[key].length;
     }
+  }
 
-    const contentArrays = arrayKeys.filter((key) =>
-      Array.isArray(candidate[key])
-    );
+  for (const key of wrapperKeys) {
+    const nested = getContentArrayStats(value[key], depth + 1);
+    arrays += nested.arrays;
+    entries += nested.entries;
+  }
 
+  return { arrays, entries };
+}
+
+function hasProtectedHotSearchContent(value, depth = 0) {
+  if (!isObject(value) || depth > 3) {
+    return false;
+  }
+
+  for (const key of hotSearchKeys) {
     if (
-      contentArrays.length > 0 &&
-      contentArrays.every((key) => candidate[key].length === 0)
+      (Array.isArray(value[key]) && value[key].length > 0) ||
+      isObject(value[key])
     ) {
       return true;
     }
   }
 
-  return false;
+  for (const key of ["title", "name", "card_type_name"]) {
+    const text = typeof value[key] === "string" ? value[key] : "";
+    if (/(?:微博)?热搜|热榜/.test(text)) {
+      return true;
+    }
+  }
+
+  return wrapperKeys.some((key) =>
+    hasProtectedHotSearchContent(value[key], depth + 1)
+  );
 }
 
 function cleanArray(entries, advertiseIds, depth) {
@@ -239,6 +282,32 @@ function cleanArray(entries, advertiseIds, depth) {
   const output = [];
 
   for (const entry of entries) {
+    const before = getContentArrayStats(entry);
+    const protectsHotSearch = hasProtectedHotSearchContent(entry);
+
+    // Structural parent groups (such as the combined hot-search + banner
+    // section) are never classified from their own ad metadata. Clean their
+    // child cards individually so one promotional child cannot remove the
+    // surrounding hot-search block.
+    if (before.arrays > 0 || protectsHotSearch) {
+      const nestedRemoved = cleanContainer(entry, advertiseIds, depth + 1);
+      const after = getContentArrayStats(entry);
+      removed += nestedRemoved;
+
+      if (
+        !protectsHotSearch &&
+        before.entries > 0 &&
+        after.entries === 0 &&
+        nestedRemoved > 0
+      ) {
+        removed += 1;
+        continue;
+      }
+
+      output.push(entry);
+      continue;
+    }
+
     if (isMarkedAd(entry, advertiseIds)) {
       removed += 1;
       continue;
@@ -246,12 +315,6 @@ function cleanArray(entries, advertiseIds, depth) {
 
     const nestedRemoved = cleanContainer(entry, advertiseIds, depth + 1);
     removed += nestedRemoved;
-
-    if (nestedRemoved > 0 && isEmptyContentGroup(entry)) {
-      removed += 1;
-      continue;
-    }
-
     output.push(entry);
   }
 
@@ -265,6 +328,19 @@ function cleanContainer(container, advertiseIds, depth = 0) {
 
   collectAdvertiseIds(container, advertiseIds);
   let removed = 0;
+
+  for (const key of adObjectKeys) {
+    if (!isObject(container[key])) {
+      continue;
+    }
+
+    if (isMarkedAd(container[key], advertiseIds)) {
+      delete container[key];
+      removed += 1;
+    } else {
+      removed += cleanContainer(container[key], advertiseIds, depth + 1);
+    }
+  }
 
   for (const key of arrayKeys) {
     if (!Array.isArray(container[key])) {
