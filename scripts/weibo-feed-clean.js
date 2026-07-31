@@ -197,9 +197,12 @@ function isMarkedAd(entry, advertiseIds) {
   }
 
   // This is an established Weibo card marker used inside nested action data.
-  // Limit the string scan to unambiguous tokens instead of generic "ad" text.
+  // Exclude child content arrays: an ad child must not cause its surrounding
+  // hot-search/feed section to be classified as an ad.
   try {
-    const serialized = JSON.stringify(entry).toLowerCase();
+    const serialized = JSON.stringify(entry, (key, value) =>
+      arrayKeys.includes(key) ? undefined : value
+    ).toLowerCase();
     return (
       serialized.includes("res_from:ads") ||
       serialized.includes("\"ads_word\"") ||
