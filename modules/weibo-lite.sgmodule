@@ -1,5 +1,5 @@
 #!name=微博轻量去广告
-#!desc=清理开屏、顶部轮播及信息流广告；优先保留热搜、账号与正常功能
+#!desc=清理开屏及信息流广告；发现与搜索容器原样放行，确保热搜稳定
 #!author=yesanshao007
 #!requirement=SYSTEM = 'iOS'
 
@@ -16,7 +16,7 @@ weibo-splash-boot-clean = type=http-response, pattern=^https?:\/\/boot[^/]*\.wei
 weibo-splash-sdk-clean = type=http-response, pattern=^https?:\/\/(?:sdk|wb)app\.uve\.weibo\.com\/(?:interface\/sdk\/sdkad\.php|wbapplua\/wbpullad\.lua|preload\/get_ad)(?:\?|$), requires-body=true, max-size=2097152, timeout=5, script-path=https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/scripts/weibo-splash-clean.js
 weibo-splash-api-clean = type=http-response, pattern=^https?:\/\/api\.weibo\.cn\/\d+\/ad\/preload(?:\?|$), requires-body=true, max-size=2097152, timeout=5, script-path=https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/scripts/weibo-splash-clean.js
 weibo-timeline-clean = type=http-response, pattern=^https?:\/\/m?api\.weibo\.(?:cn|com)\/\d+\/(?:statuses\/(?:friends(?:\/|_)timeline|unread_friends(?:\/|_)timeline|unread_hot_timeline|container_timeline(?:_hot|_topic|_topicpage|_unread)?|video_mixtimeline|unread_topic_timeline)|statuses_unread_hot_timeline|groups\/timeline|\w{5}\/(?:statuses_unread_hot_timeline|timeline))(?:\?|$), requires-body=true, max-size=5242880, timeout=5, script-path=https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/scripts/weibo-feed-clean.js
-weibo-card-clean = type=http-response, pattern=^https?:\/\/m?api\.weibo\.(?:cn|com)\/\d+\/(?:(?:\w{5}\/)?cardlist|page|searchall|search\/(?:finder|container_timeline|container_discover)|container\/(?:asyn|get_item)|flow(?:list|page)|messageflow(?:\/notice)?)(?:\?|$), requires-body=true, max-size=5242880, timeout=5, script-path=https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/scripts/weibo-feed-clean.js
+weibo-card-clean = type=http-response, pattern=^https?:\/\/m?api\.weibo\.(?:cn|com)\/\d+\/(?:(?:\w{5}\/)?cardlist|page|container\/(?:asyn|get_item)|flow(?:list|page)|messageflow(?:\/notice)?)(?:\?|$), requires-body=true, max-size=5242880, timeout=5, script-path=https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/scripts/weibo-feed-clean.js
 weibo-media-clean = type=http-response, pattern=^https?:\/\/m?api\.weibo\.(?:cn|com)\/\d+\/(?:video\/(?:community_tab|tiny_stream_video_list|tiny_stream_mid_detail)|stories\/(?:video_stream|home_list)|photo\/recommend_list|service\/picfeed|comments\/build_comments)(?:\?|$), requires-body=true, max-size=5242880, timeout=5, script-path=https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/scripts/weibo-feed-clean.js
 
 [MITM]
