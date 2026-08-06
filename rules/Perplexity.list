@@ -1,0 +1,9 @@
+# NAME: Perplexity
+# SCOPE: Surge iOS and Mac
+# AUDITED: 2026-08-06
+# SOURCES: https://www.perplexity.ai/ and https://docs.perplexity.ai/
+# POLICY: conservative; first-party service domains only
+# TOTAL: 2
+
+DOMAIN-SUFFIX,perplexity.ai
+DOMAIN-SUFFIX,pplx.ai
