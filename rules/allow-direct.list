@@ -25,8 +25,3 @@ DOMAIN,www.msftconnecttest.com
 DOMAIN,dns.msftncsi.com
 DOMAIN,connectivitycheck.gstatic.com
 
-# 国内登录与风控（旧配置中已确认需要直连）
-DOMAIN-SUFFIX,dun.163.com
-DOMAIN-SUFFIX,163yun.com
-DOMAIN,msg.qy.net
-DOMAIN-SUFFIX,bocichina.com
