@@ -1,18 +1,19 @@
 # NAME: OpenAI
-# SCOPE: Surge iOS
-# AUDITED: 2026-07-28
-# UPSTREAM: https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Surge/OpenAI
-# POLICY: conservative; exact service ownership over shared infrastructure
-# REMOVED: PROCESS-NAME, USER-AGENT, DOMAIN-KEYWORD and shared-cloud catch-alls
-# TOTAL: 23
+# SCOPE: Surge iOS, Surge Mac, OpenClash
+# AUDITED: 2026-08-14
+# SOURCE: https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps
+# UPSTREAM-CROSS-CHECK: https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Surge/OpenAI
+# POLICY: conservative; first-party domains plus shared dependencies explicitly required by OpenAI
+# REMOVED: PROCESS-NAME, DOMAIN-KEYWORD, unscoped upstream vendor catch-alls and stale fixed IP/ASN entries
+# TOTAL: 25
 
 DOMAIN,cdn.workos.com
 DOMAIN,challenges.cloudflare.com
-DOMAIN,chatgpt.livekit.cloud
-DOMAIN,client-api.arkoselabs.com
-DOMAIN,ct.sendgrid.net
+DOMAIN-SUFFIX,chatgpt.livekit.cloud
+DOMAIN-SUFFIX,client-api.arkoselabs.com
+DOMAIN-SUFFIX,ct.sendgrid.net
 DOMAIN,forwarder.workos.com
-DOMAIN,host.livekit.cloud
+DOMAIN-SUFFIX,host.livekit.cloud
 DOMAIN,humb.apple.com
 DOMAIN,images.workoscdn.com
 DOMAIN,js.stripe.com
@@ -21,9 +22,11 @@ DOMAIN,o33249.ingest.sentry.io
 DOMAIN,openai-api.arkoselabs.com
 DOMAIN,rum.browser-intake-datadoghq.com
 DOMAIN,setup.workos.com
-DOMAIN,turn.livekit.cloud
+DOMAIN-SUFFIX,turn.livekit.cloud
 DOMAIN,workos.imgix.net
 DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,intercom.io
+DOMAIN-SUFFIX,intercomcdn.com
 DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,oaistatsig.com
 DOMAIN-SUFFIX,oaiusercontent.com

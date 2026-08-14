@@ -1,10 +1,10 @@
 # NAME: Amazon
-# SCOPE: Surge iOS
-# AUDITED: 2026-07-28
+# SCOPE: Surge iOS, Surge Mac, OpenClash
+# AUDITED: 2026-08-14
 # UPSTREAM: https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Surge/Amazon
 # POLICY: conservative; exact service ownership over shared infrastructure
-# REMOVED: PROCESS-NAME, USER-AGENT, DOMAIN-KEYWORD and shared-cloud catch-alls
-# TOTAL: 198
+# REMOVED: PROCESS-NAME, USER-AGENT, DOMAIN-KEYWORD, shared hosting/CDN domains and shared AWS IP ranges
+# TOTAL: 178
 
 DOMAIN-SUFFIX,a2z.com
 DOMAIN-SUFFIX,aboutamazon.cn
@@ -19,8 +19,6 @@ DOMAIN-SUFFIX,aboutamazon.in
 DOMAIN-SUFFIX,aboutamazon.it
 DOMAIN-SUFFIX,aboutamazon.jp
 DOMAIN-SUFFIX,aboutamazon.pl
-DOMAIN-SUFFIX,acmvalidations.com
-DOMAIN-SUFFIX,acmvalidationsaws.com
 DOMAIN-SUFFIX,aesworkshops.com
 DOMAIN-SUFFIX,aiv-cdn.net
 DOMAIN-SUFFIX,aiv-delivery.net
@@ -98,7 +96,6 @@ DOMAIN-SUFFIX,amazonvideodirect.com
 DOMAIN-SUFFIX,amazonworkdocs.cn
 DOMAIN-SUFFIX,amazonworkdocs.com
 DOMAIN-SUFFIX,amazonworkdocs.com.cn
-DOMAIN-SUFFIX,amplifyapp.com
 DOMAIN-SUFFIX,amplifyframework.com
 DOMAIN-SUFFIX,amzn.asia
 DOMAIN-SUFFIX,amzn.com
@@ -130,7 +127,6 @@ DOMAIN-SUFFIX,boxofficemojo.com
 DOMAIN-SUFFIX,cdkworkshop.com
 DOMAIN-SUFFIX,containersonaws.com
 DOMAIN-SUFFIX,createspace.com
-DOMAIN-SUFFIX,elasticbeanstalk.com
 DOMAIN-SUFFIX,gameon-masters.com
 DOMAIN-SUFFIX,gdansk-amazon.com
 DOMAIN-SUFFIX,images-amazon.com
@@ -157,7 +153,6 @@ DOMAIN-SUFFIX,kindleoasis.org
 DOMAIN-SUFFIX,kindleoasis.us
 DOMAIN-SUFFIX,kindleoasisnews.com
 DOMAIN-SUFFIX,kindleproject.com
-DOMAIN-SUFFIX,llnwd.net
 DOMAIN-SUFFIX,media-amazon.com
 DOMAIN-SUFFIX,media-imdb.com
 DOMAIN-SUFFIX,prime-video.com
@@ -189,18 +184,3 @@ DOMAIN-SUFFIX,yamaxun.cn
 DOMAIN-SUFFIX,yamaxun.com
 DOMAIN-SUFFIX,z.cn
 DOMAIN-SUFFIX,zappos
-IP-CIDR,13.32.0.0/15,no-resolve
-IP-CIDR,13.35.0.0/17,no-resolve
-IP-CIDR,18.184.0.0/15,no-resolve
-IP-CIDR,18.194.0.0/15,no-resolve
-IP-CIDR,18.208.0.0/13,no-resolve
-IP-CIDR,18.232.0.0/14,no-resolve
-IP-CIDR,52.200.0.0/13,no-resolve
-IP-CIDR,52.58.0.0/15,no-resolve
-IP-CIDR,52.74.0.0/16,no-resolve
-IP-CIDR,52.77.0.0/16,no-resolve
-IP-CIDR,52.84.0.0/15,no-resolve
-IP-CIDR,54.156.0.0/14,no-resolve
-IP-CIDR,54.226.0.0/15,no-resolve
-IP-CIDR,54.230.156.0/22,no-resolve
-IP-CIDR,54.93.0.0/16,no-resolve
