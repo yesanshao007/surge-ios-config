@@ -1,10 +1,11 @@
 # NAME: Gemini
 # SCOPE: Surge iOS
-# AUDITED: 2026-07-28
+# AUDITED: 2026-08-15
 # UPSTREAM: https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Surge/Gemini
+# REFERENCE: https://knowledge.workspace.google.com/admin/generative-ai/gemini-app/gemini-app-firewall-settings
 # POLICY: conservative; exact service ownership over shared infrastructure
 # REMOVED: PROCESS-NAME, USER-AGENT, DOMAIN-KEYWORD and shared-cloud catch-alls
-# TOTAL: 12
+# TOTAL: 13
 
 DOMAIN,ai.google.dev
 DOMAIN,alkalimakersuite-pa.clients6.google.com
@@ -12,6 +13,7 @@ DOMAIN,colab.research.google.com
 DOMAIN,developerprofiles.google.dev
 DOMAIN,generativelanguage.googleapis.com
 DOMAIN,makersuite.google.com
+DOMAIN,waa-pa.clients6.google.com
 DOMAIN-SUFFIX,bard.google.com
 DOMAIN-SUFFIX,deepmind.com
 DOMAIN-SUFFIX,deepmind.google
