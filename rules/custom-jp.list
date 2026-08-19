@@ -1,0 +1,5 @@
+# NAME: Custom JP
+# AUDITED: 2026-08-19
+# 仅放经过核实、需要固定日本出口的个人规则；一行一个规则，不写策略。
+
+DOMAIN-SUFFIX,mgstage.com
