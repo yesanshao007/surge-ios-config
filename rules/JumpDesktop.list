@@ -1,0 +1,15 @@
+# NAME: Jump Desktop
+# SCOPE: Surge iOS, Surge Mac, and OpenClash
+# AUDITED: 2026-08-21
+# SOURCE: https://support.jumpdesktop.com/hc/en-us/articles/360042490351-Administrators-Guide-For-Jump-Desktop-Connect
+# EVIDENCE: Surge Mac recent requests; api.jumpdesktop.com and neuron.jumpdesktop.com previously matched FINAL
+# POLICY: official first-party control and relay endpoints plus the verified macOS Connect process
+# NOTE: PROCESS-NAME applies on Surge Mac; shared domain rules cover iOS and OpenClash
+# TOTAL: 6
+
+PROCESS-NAME,JumpConnect
+DOMAIN,neuron.jumpdesktop.com
+DOMAIN,api.jumpdesktop.com
+DOMAIN,app.jumpdesktop.com
+DOMAIN,mirror.jumpdesktop.com
+DOMAIN,turn.jumpdesktop.com
