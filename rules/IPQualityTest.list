@@ -1,0 +1,15 @@
+# NAME: IP Quality Test
+# SCOPE: Surge iOS, Surge Mac, and OpenClash
+# AUDITED: 2026-08-30
+# SOURCES: https://radar.cloudflare.com/ip
+# SOURCES: https://ipinfo.io/what-is-my-ip
+# SOURCES: https://www.abuseipdb.com/check/
+# SOURCES: https://www.ipqualityscore.com/free-ip-lookup-proxy-vpn-test
+# POLICY: independent first-party IP/ASN, anonymization, proxy/VPN, and abuse-reputation signals
+# NOTE: no provider offers a universal IP-purity verdict; compare multiple signals and their freshness
+# TOTAL: 4
+
+DOMAIN,radar.cloudflare.com
+DOMAIN-SUFFIX,ipinfo.io
+DOMAIN-SUFFIX,abuseipdb.com
+DOMAIN-SUFFIX,ipqualityscore.com
