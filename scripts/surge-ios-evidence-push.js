@@ -148,11 +148,14 @@ if (
   !/^[a-f0-9]{64}$/.test(options.token || "") ||
   !/^[a-f0-9]{16}$/.test(options.device || "")
 ) {
+  console.log("iOS evidence push: configuration invalid");
   $surge.logbook("iOS evidence push: invalid private argument");
   $done();
 } else {
+  console.log("iOS evidence push: configuration accepted");
   $httpAPI("GET", "/v1/requests/recent", {}, (result) => {
     const requests = result && Array.isArray(result.requests) ? result.requests : [];
+    console.log(`iOS evidence push: recent requests=${requests.length}`);
     const payload = {
       schema_version: 1,
       source: "surge-ios-push",
@@ -174,8 +177,12 @@ if (
       },
       (error, response) => {
         if (!error && response && Number(response.status) >= 200 && Number(response.status) < 300) {
+          console.log(`iOS evidence push: upload succeeded status=${Number(response.status)}`);
           $surge.logbook(`iOS evidence push: success rows=${payload.requests.rows.length}`);
         } else {
+          console.log(
+            `iOS evidence push: upload failed status=${response ? Number(response.status) : 0}`
+          );
           $surge.logbook("iOS evidence push: upload unavailable");
         }
         $done();
