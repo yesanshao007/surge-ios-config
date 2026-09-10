@@ -10,6 +10,9 @@ DOMAIN-SUFFIX,googleadsserving.cn
 DOMAIN,pagead2.googlesyndication.com
 DOMAIN,adservice.google.com
 
+# Google 应用分析（设备侧多日证据，仅拦截精确遥测域名）
+DOMAIN,app-analytics-services.com
+
 # Microsoft / Yahoo 广告
 DOMAIN,ads.microsoft.com
 DOMAIN,ads.msn.com
