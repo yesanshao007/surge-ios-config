@@ -1,15 +1,17 @@
 # NAME: Apple
 # SCOPE: Surge iOS
-# AUDITED: 2026-09-30
+# AUDITED: 2026-10-07
 # SOURCE: https://support.apple.com/101555
 # UPSTREAM: https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Surge/Apple
 # POLICY: conservative; exact service ownership over shared infrastructure
 # REMOVED: PROCESS-NAME, USER-AGENT, DOMAIN-KEYWORD and shared-cloud catch-alls
-# TOTAL: 35
+# TOTAL: 36
 
 DOMAIN,apple-relay.cloudflare.com
 DOMAIN,apple-relay.fastly-edge.com
 DOMAIN,cp4.cloudflare.com
+# Safari Safe Browsing OHTTP relay; runtime-observed and independently cross-checked.
+DOMAIN,ohttp-relay1.fastly-edge.com
 DOMAIN-SUFFIX,aaplimg.com
 DOMAIN-SUFFIX,aaplimg.com.cn
 DOMAIN-SUFFIX,apple-cloudkit.com
