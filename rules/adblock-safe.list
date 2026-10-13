@@ -4,8 +4,12 @@
 
 # Google 广告
 DOMAIN-SUFFIX,doubleclick.net
+DOMAIN,googleads.g.doubleclick-cn.net
+DOMAIN,pubads.g.doubleclick-cn.net
 DOMAIN-SUFFIX,googlesyndication.com
+DOMAIN,pagead2.googlesyndication-cn.com
 DOMAIN-SUFFIX,googleadservices.com
+DOMAIN,pagead2.googleadservices-cn.com
 DOMAIN-SUFFIX,googleadsserving.cn
 DOMAIN,pagead2.googlesyndication.com
 DOMAIN,adservice.google.com
