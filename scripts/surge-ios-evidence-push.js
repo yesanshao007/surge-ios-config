@@ -1,10 +1,10 @@
 /**
  * Surge iOS evidence push.
  *
- * Reads the local recent-request API, reduces it to domain/rule/result counts,
- * and uploads only that sanitized aggregate to an authenticated Tailnet sink.
- * No URL path, query, header, body, note, IP address, credential, or node name
- * is included in the payload.
+ * Reads the local recent-request API and always uploads a sanitized aggregate.
+ * Failed/rejected requests and policy-class mismatches are additionally sent as
+ * complete request records to the authenticated Tailnet-only temporary inbox.
+ * The receiver limits retention and never writes request bodies to service logs.
  */
 
 function parseArgument(value) {
@@ -86,6 +86,173 @@ function policyClass(value) {
   return "proxy";
 }
 
+function requestSignature(request) {
+  const domain = extractDomain(request);
+  if (!domain) return null;
+  return {
+    domain,
+    rule: ruleLabel(request.rule),
+    original: policyClass(request.originalPolicyName),
+    effective: policyClass(request.policyName),
+  };
+}
+
+function readBaselines() {
+  try {
+    const raw = $persistentStore.read("surge-ios-evidence-classification-baseline-v1");
+    const parsed = JSON.parse(raw || "{}");
+    const result = Object.create(null);
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return result;
+    Object.keys(parsed).forEach((domain) => {
+      const value = parsed[domain];
+      if (
+        /^[a-z0-9_](?:[a-z0-9_.-]*[a-z0-9_])?$/.test(domain) &&
+        value && typeof value === "object" &&
+        typeof value.rule === "string" &&
+        ["direct", "reject", "proxy"].includes(value.original) &&
+        ["direct", "reject", "proxy"].includes(value.effective)
+      ) result[domain] = { domain, rule: value.rule, original: value.original, effective: value.effective };
+    });
+    return result;
+  } catch (_) {
+    return Object.create(null);
+  }
+}
+
+function anomalyReasons(request, previous) {
+  const reasons = [];
+  if (request.rejected === true) reasons.push("rejected");
+  if (request.failed === true) reasons.push("failed");
+  const ruleKind = String(request.rule || "").split(",", 1)[0].trim().toUpperCase();
+  if (ruleKind === "FINAL" || ruleKind === "UNKNOWN") reasons.push("fallback-rule");
+  const original = policyClass(request.originalPolicyName);
+  const effective = policyClass(request.policyName);
+  if (original !== effective) reasons.push("policy-class-mismatch");
+  const current = requestSignature(request);
+  if (
+    previous && current &&
+    (previous.rule !== current.rule || previous.original !== current.original || previous.effective !== current.effective)
+  ) reasons.push("classification-drift");
+  return reasons;
+}
+
+function hash32(value, seed) {
+  let hash = seed >>> 0;
+  for (let index = 0; index < value.length; index += 1) {
+    hash ^= value.charCodeAt(index);
+    hash = Math.imul(hash, 16777619) >>> 0;
+  }
+  return hash.toString(16).padStart(8, "0");
+}
+
+function anomalyFingerprint(request) {
+  // Hash in memory only; the URL and other source fields are never persisted as
+  // deduplication state on the phone.
+  const identity = JSON.stringify([
+    request.id,
+    request.startDate,
+    request.remoteHost,
+    request.URL,
+    request.rule,
+    request.originalPolicyName,
+    request.policyName,
+    request.failed === true,
+    request.rejected === true,
+  ]);
+  return hash32(identity, 2166136261) + hash32(identity, 2246822519);
+}
+
+function utf8Length(value) {
+  try {
+    return unescape(encodeURIComponent(value)).length;
+  } catch (_) {
+    return value.length * 3;
+  }
+}
+
+function readRecentFingerprints() {
+  try {
+    const raw = $persistentStore.read("surge-ios-evidence-anomaly-hashes-v1");
+    const parsed = JSON.parse(raw || "[]");
+    return Array.isArray(parsed) ? parsed.filter((value) => /^[a-f0-9]{16}$/.test(value)) : [];
+  } catch (_) {
+    return [];
+  }
+}
+
+function rememberFingerprints(values, baselineUpdates) {
+  const merged = Array.from(new Set(readRecentFingerprints().concat(values))).slice(-500);
+  $persistentStore.write(JSON.stringify(merged), "surge-ios-evidence-anomaly-hashes-v1");
+  const baselines = readBaselines();
+  const updatedDomains = new Set(Object.keys(baselineUpdates));
+  const keys = Object.keys(baselines).filter((domain) => !updatedDomains.has(domain))
+    .concat(Object.keys(baselineUpdates)).slice(-500);
+  const bounded = Object.create(null);
+  keys.forEach((domain) => { bounded[domain] = baselineUpdates[domain] || baselines[domain]; });
+  $persistentStore.write(JSON.stringify(bounded), "surge-ios-evidence-classification-baseline-v1");
+}
+
+function prepareAnomalies(requests, deviceHash) {
+  const seen = new Set(readRecentFingerprints());
+  const priorBaselines = readBaselines();
+  const baselineUpdates = Object.create(null);
+  const candidates = [];
+  requests
+    .filter((request) => request && typeof request === "object")
+    .slice()
+    .sort((left, right) => Number(right.startDate || 0) - Number(left.startDate || 0))
+    .forEach((request) => {
+      const signature = requestSignature(request);
+      const reasons = anomalyReasons(request, signature ? priorBaselines[signature.domain] : null);
+      if (reasons.length > 0) candidates.push({ request, reasons, signature });
+      else if (signature && !Object.prototype.hasOwnProperty.call(baselineUpdates, signature.domain)) {
+        baselineUpdates[signature.domain] = signature;
+      }
+    });
+  const envelope = {
+    schema_version: 1,
+    source: "surge-ios-anomaly-push",
+    captured_at: new Date().toISOString(),
+    device_hash: deviceHash,
+    records: [],
+  };
+  const fingerprints = [];
+  const pendingBaselines = Object.create(null);
+  let duplicates = 0;
+  let omitted = 0;
+
+  candidates.forEach(({ request, reasons, signature }) => {
+    const fingerprint = anomalyFingerprint(request);
+    if (seen.has(fingerprint)) {
+      duplicates += 1;
+      if (signature && !Object.prototype.hasOwnProperty.call(pendingBaselines, signature.domain)) {
+        pendingBaselines[signature.domain] = signature;
+      }
+      return;
+    }
+    if (envelope.records.length >= 50) {
+      omitted += 1;
+      return;
+    }
+    const wrapped = { reasons, record: request };
+    const next = envelope.records.concat([wrapped]);
+    const trial = Object.assign({}, envelope, { records: next });
+    if (utf8Length(JSON.stringify(trial)) > 256 * 1024) {
+      omitted += 1;
+      return;
+    }
+    envelope.records.push(wrapped);
+    fingerprints.push(fingerprint);
+    seen.add(fingerprint);
+    if (signature && !Object.prototype.hasOwnProperty.call(pendingBaselines, signature.domain)) {
+      pendingBaselines[signature.domain] = signature;
+    }
+  });
+
+  Object.keys(pendingBaselines).forEach((domain) => { baselineUpdates[domain] = pendingBaselines[domain]; });
+  return { envelope, fingerprints, duplicates, omitted, baselineUpdates, candidateCount: candidates.length };
+}
+
 function resultClass(request) {
   if (request.rejected) return "rejected";
   if (request.failed) return "failed";
@@ -163,6 +330,7 @@ if (
       device_hash: options.device,
       requests: summarize(requests),
     };
+    const anomalies = prepareAnomalies(requests, options.device);
 
     $httpClient.post(
       {
@@ -184,8 +352,52 @@ if (
             `iOS evidence push: upload failed status=${response ? Number(response.status) : 0}`
           );
           $surge.logbook("iOS evidence push: upload unavailable");
+          $done();
+          return;
         }
-        $done();
+
+        if (anomalies.envelope.records.length === 0) {
+          rememberFingerprints([], anomalies.baselineUpdates);
+          console.log(
+            `iOS evidence push: no new anomaly records; duplicates=${anomalies.duplicates}`
+          );
+          $done();
+          return;
+        }
+
+        const anomalyEndpoint = options.endpoint.replace(/\/v1\/ingest$/, "/v1/anomalies/ingest");
+        $httpClient.post(
+          {
+            url: anomalyEndpoint,
+            headers: {
+              "Content-Type": "application/json",
+              "X-Ingest-Key": options.token,
+            },
+            body: JSON.stringify(anomalies.envelope),
+            policy: "Tailscale",
+            timeout: 15,
+          },
+          (anomalyError, anomalyResponse) => {
+            if (
+              !anomalyError && anomalyResponse &&
+              Number(anomalyResponse.status) >= 200 && Number(anomalyResponse.status) < 300
+            ) {
+              rememberFingerprints(anomalies.fingerprints, anomalies.baselineUpdates);
+              console.log(
+                `iOS evidence push: anomaly upload succeeded records=${anomalies.envelope.records.length} omitted=${anomalies.omitted}`
+              );
+              $surge.logbook(
+                `iOS evidence push: anomaly records uploaded=${anomalies.envelope.records.length}`
+              );
+            } else {
+              console.log(
+                `iOS evidence push: anomaly upload unavailable status=${anomalyResponse ? Number(anomalyResponse.status) : 0}`
+              );
+              $surge.logbook("iOS evidence push: anomaly upload unavailable");
+            }
+            $done();
+          }
+        );
       }
     );
   });
