@@ -321,7 +321,14 @@ if (
 } else {
   console.log("iOS evidence push: configuration accepted");
   $httpAPI("GET", "/v1/requests/recent", {}, (result) => {
-    const requests = result && Array.isArray(result.requests) ? result.requests : [];
+    if (!result || !Array.isArray(result.requests)) {
+      console.log("iOS evidence push: recent requests unavailable");
+      $surge.logbook("iOS evidence push: recent requests unavailable");
+      $done();
+      return;
+    }
+
+    const requests = result.requests;
     console.log(`iOS evidence push: recent requests=${requests.length}`);
     const payload = {
       schema_version: 1,
