@@ -86,6 +86,16 @@ function policyClass(value) {
   return "proxy";
 }
 
+function uploadFailureClass(error) {
+  const message = String(error && error.message ? error.message : error || "").toLowerCase();
+  if (!message) return "no-response";
+  if (/timeout|timed out/.test(message)) return "timeout";
+  if (/dns|resolve|name lookup|host not found/.test(message)) return "dns";
+  if (/tls|ssl|certificate/.test(message)) return "tls";
+  if (/connect|socket|network|unreachable|reset|refused/.test(message)) return "connection";
+  return "transport-other";
+}
+
 function requestSignature(request) {
   const domain = extractDomain(request);
   if (!domain) return null;
@@ -347,7 +357,6 @@ if (
           "X-Ingest-Key": options.token,
         },
         body: JSON.stringify(payload),
-        policy: "Tailscale",
         timeout: 15,
       },
       (error, response) => {
@@ -356,9 +365,9 @@ if (
           $surge.logbook(`iOS evidence push: success rows=${payload.requests.rows.length}`);
         } else {
           console.log(
-            `iOS evidence push: upload failed status=${response ? Number(response.status) : 0}`
+            `iOS evidence push: upload failed status=${response ? Number(response.status) : 0} class=${uploadFailureClass(error)}`
           );
-          $surge.logbook("iOS evidence push: upload unavailable");
+          $surge.logbook(`iOS evidence push: upload unavailable class=${uploadFailureClass(error)}`);
           $done();
           return;
         }
@@ -381,7 +390,6 @@ if (
               "X-Ingest-Key": options.token,
             },
             body: JSON.stringify(anomalies.envelope),
-            policy: "Tailscale",
             timeout: 15,
           },
           (anomalyError, anomalyResponse) => {
@@ -400,7 +408,9 @@ if (
               console.log(
                 `iOS evidence push: anomaly upload unavailable status=${anomalyResponse ? Number(anomalyResponse.status) : 0}`
               );
-              $surge.logbook("iOS evidence push: anomaly upload unavailable");
+              $surge.logbook(
+                `iOS evidence push: anomaly upload unavailable class=${uploadFailureClass(anomalyError)}`
+              );
             }
             $done();
           }
