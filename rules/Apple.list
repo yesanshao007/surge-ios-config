@@ -1,16 +1,12 @@
 # NAME: Apple
-# SCOPE: Surge iOS
-# AUDITED: 2026-10-07
+# PURPOSE: service-specific routing
+# FORMAT: ruleset-v1
+# UPDATED: 2026-11-01
 # SOURCE: https://support.apple.com/101555
-# UPSTREAM: https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Surge/Apple
-# POLICY: conservative; exact service ownership over shared infrastructure
-# REMOVED: PROCESS-NAME, USER-AGENT, DOMAIN-KEYWORD and shared-cloud catch-alls
-# TOTAL: 36
 
 DOMAIN,apple-relay.cloudflare.com
 DOMAIN,apple-relay.fastly-edge.com
 DOMAIN,cp4.cloudflare.com
-# Safari Safe Browsing OHTTP relay; runtime-observed and independently cross-checked.
 DOMAIN,ohttp-relay1.fastly-edge.com
 DOMAIN-SUFFIX,aaplimg.com
 DOMAIN-SUFFIX,aaplimg.com.cn
@@ -31,16 +27,7 @@ DOMAIN-SUFFIX,itunes.com
 DOMAIN-SUFFIX,mac.com
 DOMAIN-SUFFIX,me.com
 DOMAIN-SUFFIX,mzstatic.com
-IP-CIDR,139.178.128.0/18,no-resolve
-IP-CIDR,144.178.0.0/19,no-resolve
-IP-CIDR,144.178.36.0/22,no-resolve
-IP-CIDR,144.178.48.0/20,no-resolve
 IP-CIDR,17.0.0.0/8,no-resolve
-IP-CIDR,192.35.50.0/24,no-resolve
-IP-CIDR,198.183.17.0/24,no-resolve
-IP-CIDR,205.180.175.0/24,no-resolve
-IP-CIDR,63.92.224.0/19,no-resolve
-IP-CIDR,65.199.22.0/23,no-resolve
 IP-CIDR6,2403:300::/32,no-resolve
 IP-CIDR6,2620:149::/32,no-resolve
 IP-CIDR6,2a01:b740::/32,no-resolve

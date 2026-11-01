@@ -1,7 +1,10 @@
 # NAME: Custom Direct
-# 仅放“必须直连”的个人规则；一行一个规则，不写策略。
+# PURPOSE: personal direct routing
+# FORMAT: ruleset-v1
+# UPDATED: 2026-11-01
+# SOURCE: local policy; see docs/RULESET_AUDIT.md
 
 DOMAIN-SUFFIX,bytedance.com
-DOMAIN-SUFFIX,zijieapi.com
-DOMAIN-SUFFIX,pancake.apple.com
 DOMAIN-SUFFIX,itunes.apple.com
+DOMAIN-SUFFIX,pancake.apple.com
+DOMAIN-SUFFIX,zijieapi.com

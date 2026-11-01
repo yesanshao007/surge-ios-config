@@ -1,2 +1,10 @@
+# NAME: PayPal
+# PURPOSE: service-specific routing
+# FORMAT: ruleset-v1
+# UPDATED: 2026-11-01
+# SOURCE: https://developer.paypal.com/payment-links-buttons/troubleshooting/
+# NOTE: paypal.me is documented at https://www.paypal.com/us/cshelp/article/paypalme-frequently-asked-questions-help432
+
 DOMAIN-SUFFIX,paypal.com
+DOMAIN-SUFFIX,paypal.me
 DOMAIN-SUFFIX,paypalobjects.com

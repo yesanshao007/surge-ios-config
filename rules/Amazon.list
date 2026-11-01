@@ -1,10 +1,8 @@
 # NAME: Amazon
-# SCOPE: Surge iOS, Surge Mac, OpenClash
-# AUDITED: 2026-08-14
-# UPSTREAM: https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Surge/Amazon
-# POLICY: conservative; exact service ownership over shared infrastructure
-# REMOVED: PROCESS-NAME, USER-AGENT, DOMAIN-KEYWORD, shared hosting/CDN domains and shared AWS IP ranges
-# TOTAL: 178
+# PURPOSE: service-specific routing
+# FORMAT: ruleset-v1
+# UPDATED: 2026-11-01
+# SOURCE: https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Surge/Amazon
 
 DOMAIN-SUFFIX,a2z.com
 DOMAIN-SUFFIX,aboutamazon.cn
@@ -54,9 +52,6 @@ DOMAIN-SUFFIX,amazon.red
 DOMAIN-SUFFIX,amazon.sg
 DOMAIN-SUFFIX,amazonalexavoxcon.com
 DOMAIN-SUFFIX,amazonauthorinsights.com
-DOMAIN-SUFFIX,amazonaws-china.com
-DOMAIN-SUFFIX,amazonaws.co.uk
-DOMAIN-SUFFIX,amazonaws.tv
 DOMAIN-SUFFIX,amazonbusiness.cn
 DOMAIN-SUFFIX,amazonbusiness.com.cn
 DOMAIN-SUFFIX,amazonbusiness.org
@@ -76,7 +71,6 @@ DOMAIN-SUFFIX,amazonlaunchpad.com
 DOMAIN-SUFFIX,amazonlaunchpad.com.cn
 DOMAIN-SUFFIX,amazonlending.com.cn
 DOMAIN-SUFFIX,amazonliterarypartnership.com
-DOMAIN-SUFFIX,amazonlumberyard.wang
 DOMAIN-SUFFIX,amazonnow.cn
 DOMAIN-SUFFIX,amazonnow.com.cn
 DOMAIN-SUFFIX,amazonpay.com
@@ -93,10 +87,6 @@ DOMAIN-SUFFIX,amazonuniversity.jobs
 DOMAIN-SUFFIX,amazonvideo.cc
 DOMAIN-SUFFIX,amazonvideo.com
 DOMAIN-SUFFIX,amazonvideodirect.com
-DOMAIN-SUFFIX,amazonworkdocs.cn
-DOMAIN-SUFFIX,amazonworkdocs.com
-DOMAIN-SUFFIX,amazonworkdocs.com.cn
-DOMAIN-SUFFIX,amplifyframework.com
 DOMAIN-SUFFIX,amzn.asia
 DOMAIN-SUFFIX,amzn.com
 DOMAIN-SUFFIX,amzn.to
@@ -105,27 +95,7 @@ DOMAIN-SUFFIX,assoc-amazon.cn
 DOMAIN-SUFFIX,associates-amazon.com
 DOMAIN-SUFFIX,audible.com
 DOMAIN-SUFFIX,avodmp4s3ww-a.akamaihd.net
-DOMAIN-SUFFIX,aws
-DOMAIN-SUFFIX,aws-iot-hackathon.com
-DOMAIN-SUFFIX,awsautopilot.com
-DOMAIN-SUFFIX,awsautoscaling.com
-DOMAIN-SUFFIX,awsbraket.com
-DOMAIN-SUFFIX,awscloud.com
-DOMAIN-SUFFIX,awscommandlineinterface.com
-DOMAIN-SUFFIX,awsedstart.com
-DOMAIN-SUFFIX,awseducate.com
-DOMAIN-SUFFIX,awseducate.net
-DOMAIN-SUFFIX,awseducate.org
-DOMAIN-SUFFIX,awsloft-johannesburg.com
-DOMAIN-SUFFIX,awsloft-stockholm.com
-DOMAIN-SUFFIX,awssecworkshops.com
-DOMAIN-SUFFIX,awsstatic.com
-DOMAIN-SUFFIX,awsthinkbox.com
-DOMAIN-SUFFIX,awstrack.me
-DOMAIN-SUFFIX,awstrust.com
 DOMAIN-SUFFIX,boxofficemojo.com
-DOMAIN-SUFFIX,cdkworkshop.com
-DOMAIN-SUFFIX,containersonaws.com
 DOMAIN-SUFFIX,createspace.com
 DOMAIN-SUFFIX,gameon-masters.com
 DOMAIN-SUFFIX,gdansk-amazon.com
