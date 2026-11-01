@@ -1,0 +1,322 @@
+[
+  {
+    "group": "自建节点",
+    "file": "policy/CustomNodes.png",
+    "source": "tabler/tabler-icons",
+    "source_path": "icons/outline/server.svg",
+    "source_commit": "ed177a085b652fe04ec4f37ced867c94621e7840",
+    "sha256": "506d8a684fa8e4fc5570318d613c6cf44b46417fb158a1cd8a4b438436d86e3f"
+  },
+  {
+    "group": "HK",
+    "file": "policy/HK.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/Country/HongKong/HongKong.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "ccd8b7ff4375b1442e3989ea59342183f7fa68b1bfa45ade99b4a3a67f5e9019"
+  },
+  {
+    "group": "SG",
+    "file": "policy/SG.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/Country/Singapore/Singapore.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "ec84bfe57aeb6f42c981ded30bcb4ec3b7a9d4d261fd63e37dfe46864f9d65be"
+  },
+  {
+    "group": "JP",
+    "file": "policy/JP.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/Country/Japan/Japan.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "f26de300346cd1095d2ac78678b4cf962c59c49b76145f2eba1a5f194a69b1a3"
+  },
+  {
+    "group": "US",
+    "file": "policy/US.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/Country/US/US.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "35ad5efd51aa71e32424360e837ea13deffb824898a0058e673fdab119611fad"
+  },
+  {
+    "group": "TW",
+    "file": "policy/TW.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/Country/CN-Taiwan/CN-Taiwan.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "600a9aaab1d4555e36dc3419b7206bdaf79f4ac30d8af32c415625020094cfc3"
+  },
+  {
+    "group": "KR",
+    "file": "policy/KR.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/Country/Korea/Korea.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "37276b94c132bf44bee44d2d3b53b3b221feb92b8d04b48ac3fe89a16a9f72b8"
+  },
+  {
+    "group": "OverseasOnly",
+    "file": "policy/OverseasOnly.png",
+    "source": "tabler/tabler-icons",
+    "source_path": "icons/outline/world.svg",
+    "source_commit": "ed177a085b652fe04ec4f37ced867c94621e7840",
+    "sha256": "e3c7bdaa467afaa640de44c5f4cd8ed95c84799f88cdd74ffd8510fcabe0e116"
+  },
+  {
+    "group": "Rest",
+    "file": "policy/Rest.png",
+    "source": "tabler/tabler-icons",
+    "source_path": "icons/outline/dots.svg",
+    "source_commit": "ed177a085b652fe04ec4f37ced867c94621e7840",
+    "sha256": "f0bd9d3675d1bb10bea56a4c7ef7240eb05e986c3ae35ab99d6ae466ef86c562"
+  },
+  {
+    "group": "AdBlock",
+    "file": "policy/AdBlock.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/System/AD/AD.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "ef5bc8d27188a8b9d63f2b3c6fef2f4b4c9ae98684572b0d9501501f9386dfc0"
+  },
+  {
+    "group": "Proxy",
+    "file": "policy/Proxy.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/System/Proxy/Proxy.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "3543c83b18a96cf7b24ee9b83a114e7afaf82e69324405989b18151a51889119"
+  },
+  {
+    "group": "IPQualityTest",
+    "file": "policy/IPQualityTest.png",
+    "source": "tabler/tabler-icons",
+    "source_path": "icons/outline/heartbeat.svg",
+    "source_commit": "ed177a085b652fe04ec4f37ced867c94621e7840",
+    "sha256": "32b6468b1eb0a5a38cb209b411012461b813d8400760c4d1307a1db0b4a564dc"
+  },
+  {
+    "group": "Apple",
+    "file": "policy/Apple.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/Apple/Apple/Apple.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "cfac7d72515f1ced550417226e4277209ac3ed89cb33a3039ce8103e986dd62d"
+  },
+  {
+    "group": "OpenAI",
+    "file": "policy/OpenAI.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/AI/OpenAI/OpenAI.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "844632854b355b117df7d9b11e924aa735b8d48d1f249ed1fa863b51facd19e9"
+  },
+  {
+    "group": "GitHub",
+    "file": "policy/GitHub.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/Microsoft/GitHub/GitHub.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "f64a8feb31bd089e1d7afe2f3e7ed7edb41e8398df53ba3274dbe3c50497fcd2"
+  },
+  {
+    "group": "Line",
+    "file": "policy/Line.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/Communication/LINE/LINE.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "1f85448f505db85a5fda8055d40e3015214e28ca8068b5e919fa4de4c42065f0"
+  },
+  {
+    "group": "JumpDesktop",
+    "file": "policy/JumpDesktop.png",
+    "source": "tabler/tabler-icons",
+    "source_path": "icons/outline/device-desktop.svg",
+    "source_commit": "ed177a085b652fe04ec4f37ced867c94621e7840",
+    "sha256": "e80d4815d0a1643a40271d288bc0d753b9facc1b2267f6f0a15212fd85a87163"
+  },
+  {
+    "group": "PlayStation",
+    "file": "policy/PlayStation.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/SONY/PlayStation/PlayStation.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "15e9589c8fff79f7fcd48f1edc9e359a9f99b197ba541b929137d60ed3501238"
+  },
+  {
+    "group": "Spotify",
+    "file": "policy/Spotify.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/Music/Spotify/Spotify.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "1d73642852c8e6e656aee99df50fbda2dd0949683a54fdddb3b0f350c6906757"
+  },
+  {
+    "group": "Gemini",
+    "file": "policy/Gemini.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/Google/GoogleAI/GoogleAI.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "2cc02cfd38770e6f9751bdaf32f5bd44cfe6a4e186a2636b543538ba572d3526"
+  },
+  {
+    "group": "YouTube",
+    "file": "policy/YouTube.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/Google/YouTube/YouTube.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "b1bae1cda0ab7d7b380ea2c56b5319a874453b6426d4485ea1c08733ac83efc3"
+  },
+  {
+    "group": "Google",
+    "file": "policy/Google.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/Google/Google/Google.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "56296319f55ad87f7ae9eb6fabf6e5eae9ac725564468617b844bba24670aadd"
+  },
+  {
+    "group": "X",
+    "file": "policy/X.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/SpaceXAI/X/X.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "e631f2cc5923e6a1c38db221fe84fe9d1708d013df306f03d25f35b22a1f7eb7"
+  },
+  {
+    "group": "OneDrive",
+    "file": "policy/OneDrive.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/Microsoft/OneDrive/OneDrive.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "a88fe9bb22c57158a255325ea4fad57360faabd2559dde058dbb57b59db2a1bb"
+  },
+  {
+    "group": "Microsoft",
+    "file": "policy/Microsoft.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/Microsoft/Microsoft/Microsoft.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "819d4dced025aed73fe3771ddd9e6e62794f9018ee88b08ac69dbd23a66b0aac"
+  },
+  {
+    "group": "Telegram",
+    "file": "policy/Telegram.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/Communication/Telegram/Telegram.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "2f2e29ae49d764f7d4c1d17a8a23c9e191a5b5ec8cc6540f96a27e4bec272c5e"
+  },
+  {
+    "group": "Steam",
+    "file": "policy/Steam.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/Game/Steam/Steam.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "4eb40d403a93a727a2f736fd462460aa470df9c5acad2d781a7a816aadaacb87"
+  },
+  {
+    "group": "EpicGames",
+    "file": "policy/EpicGames.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/Game/EpicGames/EpicGames.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "d7be6ec09640ba50f777350d26ca49cc9a34cd2a79f3f64ac619c670632138be"
+  },
+  {
+    "group": "Nintendo",
+    "file": "policy/Nintendo.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/Game/Nintendo/Nintendo.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "785cfcd3492057b6c0bf0f23f5f566610616c0d34ffde940f4042aa5bdb351ed"
+  },
+  {
+    "group": "Netflix",
+    "file": "policy/Netflix.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/Media/Netflix/Netflix.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "5a56a162309844f754e87d00b6d30b84f7bf5eea635287a7981c8100a069c888"
+  },
+  {
+    "group": "Facebook",
+    "file": "policy/Facebook.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/Meta/Facebook/Facebook.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "87c314aecf8bcef738cd3fce09d836ea03d2857d398603c484d053544762c36b"
+  },
+  {
+    "group": "Discord",
+    "file": "policy/Discord.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/Communication/Discord/Discord.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "31c65af39007ad8e6b3d64bae5d3e8e5a8dcb65b59e089a54f5853d17bcac3df"
+  },
+  {
+    "group": "Reddit",
+    "file": "policy/Reddit.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/Social/Reddit/Reddit.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "e22516cc5c33e4f28aeb12420b8f070838c1c2f88fc0470d7c44c5786faa3cbf"
+  },
+  {
+    "group": "DMM",
+    "file": "policy/DMM.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/Media/DMMTV/DMMTV.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "1c277407a146707d90c695ff9471faba0513def65318d843892e9dfbe9492988"
+  },
+  {
+    "group": "TikTok",
+    "file": "policy/TikTok.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/ByteDance/TikTok/TikTok.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "9ffa3f3129778ac111651df45ec90245f91ce404cc3bd173867ab69eae56e1d8"
+  },
+  {
+    "group": "Amazon",
+    "file": "policy/Amazon.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/Amazon/Amazon/Amazon.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "1e458cfa7d71221e3b9f04c530966568eaf1b3ae5a4cd968da70af2d464f8755"
+  },
+  {
+    "group": "PayPal",
+    "file": "policy/PayPal.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/Payment/PayPal/PayPal.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "0721418cf13e84d7cb1cc311ff7e560f6f6c985a649d81dc0ebb067a2d061f1f"
+  },
+  {
+    "group": "Wikipedia",
+    "file": "policy/Wikipedia.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/Utilities/Wikipedia/Wikipedia.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "a51ff556d94213a02bae9b853e7258376ab1f0012255d27c8e96845ff4f48953"
+  },
+  {
+    "group": "Claude",
+    "file": "policy/Claude.png",
+    "source": "Hawaiine/Oasisic-Icons",
+    "source_path": "icons/AI/Anthropic/Anthropic.png",
+    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
+    "sha256": "b4d0ad850888b0298ef37de633ec279b4baf365066de716e5abef3e4ef0e68df"
+  },
+  {
+    "group": "Nodes",
+    "file": "policy/Nodes.png",
+    "source": "tabler/tabler-icons",
+    "source_path": "icons/outline/sitemap.svg",
+    "source_commit": "ed177a085b652fe04ec4f37ced867c94621e7840",
+    "sha256": "73145f8eb259178d8b5b24db507566dd2e2a03a4719e78c3f21690536dee2f83"
+  }
+]

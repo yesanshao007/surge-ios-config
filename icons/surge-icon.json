@@ -1,0 +1,165 @@
+{
+  "name": "Ye Chun Surge Policy Icons",
+  "icons": [
+    {
+      "name": "自建节点",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/CustomNodes.png"
+    },
+    {
+      "name": "HK",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/HK.png"
+    },
+    {
+      "name": "SG",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/SG.png"
+    },
+    {
+      "name": "JP",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/JP.png"
+    },
+    {
+      "name": "US",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/US.png"
+    },
+    {
+      "name": "TW",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/TW.png"
+    },
+    {
+      "name": "KR",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/KR.png"
+    },
+    {
+      "name": "OverseasOnly",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/OverseasOnly.png"
+    },
+    {
+      "name": "Rest",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/Rest.png"
+    },
+    {
+      "name": "AdBlock",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/AdBlock.png"
+    },
+    {
+      "name": "Proxy",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/Proxy.png"
+    },
+    {
+      "name": "IPQualityTest",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/IPQualityTest.png"
+    },
+    {
+      "name": "Apple",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/Apple.png"
+    },
+    {
+      "name": "OpenAI",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/OpenAI.png"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/GitHub.png"
+    },
+    {
+      "name": "Line",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/Line.png"
+    },
+    {
+      "name": "JumpDesktop",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/JumpDesktop.png"
+    },
+    {
+      "name": "PlayStation",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/PlayStation.png"
+    },
+    {
+      "name": "Spotify",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/Spotify.png"
+    },
+    {
+      "name": "Gemini",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/Gemini.png"
+    },
+    {
+      "name": "YouTube",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/YouTube.png"
+    },
+    {
+      "name": "Google",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/Google.png"
+    },
+    {
+      "name": "X",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/X.png"
+    },
+    {
+      "name": "OneDrive",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/OneDrive.png"
+    },
+    {
+      "name": "Microsoft",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/Microsoft.png"
+    },
+    {
+      "name": "Telegram",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/Telegram.png"
+    },
+    {
+      "name": "Steam",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/Steam.png"
+    },
+    {
+      "name": "EpicGames",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/EpicGames.png"
+    },
+    {
+      "name": "Nintendo",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/Nintendo.png"
+    },
+    {
+      "name": "Netflix",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/Netflix.png"
+    },
+    {
+      "name": "Facebook",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/Facebook.png"
+    },
+    {
+      "name": "Discord",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/Discord.png"
+    },
+    {
+      "name": "Reddit",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/Reddit.png"
+    },
+    {
+      "name": "DMM",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/DMM.png"
+    },
+    {
+      "name": "TikTok",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/TikTok.png"
+    },
+    {
+      "name": "Amazon",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/Amazon.png"
+    },
+    {
+      "name": "PayPal",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/PayPal.png"
+    },
+    {
+      "name": "Wikipedia",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/Wikipedia.png"
+    },
+    {
+      "name": "Claude",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/Claude.png"
+    },
+    {
+      "name": "Nodes",
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/Nodes.png"
+    }
+  ]
+}
