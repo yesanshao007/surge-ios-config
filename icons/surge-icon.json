@@ -39,7 +39,7 @@
     },
     {
       "name": "AdBlock",
-      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/AdBlock.png"
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/AdBlock-dual.png"
     },
     {
       "name": "Proxy",
@@ -119,7 +119,7 @@
     },
     {
       "name": "Netflix",
-      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/Netflix.png"
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/Netflix-dual.png"
     },
     {
       "name": "Facebook",
@@ -135,7 +135,7 @@
     },
     {
       "name": "DMM",
-      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/DMM.png"
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/DMM-dual.png"
     },
     {
       "name": "TikTok",
@@ -143,7 +143,7 @@
     },
     {
       "name": "Amazon",
-      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/Amazon.png"
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/Amazon-dual.png"
     },
     {
       "name": "PayPal",

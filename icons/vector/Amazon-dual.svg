@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+<!-- Dual-appearance policy icon: Amazon. Upstream vector provenance is in ../manifest.json. -->
+<rect x="8" y="8" width="240" height="240" rx="54" fill="#FFF3DE"/>
+<text x="128" y="119" text-anchor="middle" fill="#17212D" font-family="Arial,sans-serif" font-size="43" font-weight="700">amazon</text><g transform="translate(64 123) scale(5.3333)" fill="none" stroke="#E77917" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 12.5a15.198 15.198 0 0 1 -7.37 1.44a14.62 14.62 0 0 1 -6.63 -2.94" /><path d="M19.5 15c.907 -1.411 1.451 -3.323 1.5 -5c-1.197 -.773 -2.577 -.935 -4 -1" /></g>
+</svg>

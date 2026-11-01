@@ -73,11 +73,13 @@
   },
   {
     "group": "AdBlock",
-    "file": "policy/AdBlock.png",
-    "source": "Hawaiine/Oasisic-Icons",
-    "source_path": "icons/System/AD/AD.png",
-    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
-    "sha256": "ef5bc8d27188a8b9d63f2b3c6fef2f4b4c9ae98684572b0d9501501f9386dfc0"
+    "file": "policy/AdBlock-dual.png",
+    "source": "tabler/tabler-icons",
+    "source_path": "icons/outline/ad-off.svg",
+    "source_commit": "ed177a085b652fe04ec4f37ced867c94621e7840",
+    "sha256": "274776e6c4582dc9e48f3a9152b393c2ba51ff0f3e9e2cb73d210ed95723979a",
+    "vector": "vector/AdBlock-dual.svg",
+    "render": "theme-neutral rounded tile"
   },
   {
     "group": "Proxy",
@@ -233,11 +235,13 @@
   },
   {
     "group": "Netflix",
-    "file": "policy/Netflix.png",
-    "source": "Hawaiine/Oasisic-Icons",
-    "source_path": "icons/Media/Netflix/Netflix.png",
-    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
-    "sha256": "5a56a162309844f754e87d00b6d30b84f7bf5eea635287a7981c8100a069c888"
+    "file": "policy/Netflix-dual.png",
+    "source": "simple-icons/simple-icons",
+    "source_path": "icons/netflix.svg",
+    "source_commit": "90646e4bf7f3b89df6c37e65baf3e7bc759a517c",
+    "sha256": "123f5337fa205f5cec5598209fa0a254e5a47b3abc5d945050f7b416c851476d",
+    "vector": "vector/Netflix-dual.svg",
+    "render": "theme-neutral rounded tile"
   },
   {
     "group": "Facebook",
@@ -265,11 +269,13 @@
   },
   {
     "group": "DMM",
-    "file": "policy/DMM.png",
-    "source": "Hawaiine/Oasisic-Icons",
-    "source_path": "icons/Media/DMMTV/DMMTV.png",
-    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
-    "sha256": "1c277407a146707d90c695ff9471faba0513def65318d843892e9dfbe9492988"
+    "file": "policy/DMM-dual.png",
+    "source": "simple-icons/simple-icons",
+    "source_path": "icons/dmm.svg",
+    "source_commit": "90646e4bf7f3b89df6c37e65baf3e7bc759a517c",
+    "sha256": "2b506098969fbecccfe43c34d9e8f52378555e3853d82f7fc7c5d8f6928fe3ab",
+    "vector": "vector/DMM-dual.svg",
+    "render": "theme-neutral rounded tile"
   },
   {
     "group": "TikTok",
@@ -281,11 +287,13 @@
   },
   {
     "group": "Amazon",
-    "file": "policy/Amazon.png",
-    "source": "Hawaiine/Oasisic-Icons",
-    "source_path": "icons/Amazon/Amazon/Amazon.png",
-    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
-    "sha256": "1e458cfa7d71221e3b9f04c530966568eaf1b3ae5a4cd968da70af2d464f8755"
+    "file": "policy/Amazon-dual.png",
+    "source": "tabler/tabler-icons",
+    "source_path": "icons/outline/brand-amazon.svg",
+    "source_commit": "ed177a085b652fe04ec4f37ced867c94621e7840",
+    "sha256": "bffba2ba09f0b5edd6b884f15c75ef4ebc6417d1a3260048906df4cd76b8fd31",
+    "vector": "vector/Amazon-dual.svg",
+    "render": "theme-neutral rounded tile"
   },
   {
     "group": "PayPal",
