@@ -143,12 +143,14 @@
   },
   {
     "group": "JumpDesktop",
-    "file": "policy/JumpDesktop-official.png",
+    "file": "policy/JumpDesktop-rounded.png",
     "source": "Jump Desktop App Store artwork",
     "source_path": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/61/cd/d1/61cdd1fe-5fad-21f5-3b02-436f09f03e83/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.png",
     "source_commit": null,
-    "sha256": "b392a15a23d7b30db8acdcdd0a445fd91624c66ed390bfe1fb46243de2e757cc",
-    "rights": "Product artwork by Phase Five Systems; not covered by repository open-source icon licenses"
+    "sha256": "17a6be553b9f20e54e792379c422cd22381f7bfab2abb76dc8d7ee2f59363821",
+    "rights": "Product artwork by Phase Five Systems; not covered by repository open-source icon licenses",
+    "vector": "vector/JumpDesktop-rounded.svg",
+    "render": "official artwork clipped to a 512px rounded square (100px radius); transparent corners for light/dark"
   },
   {
     "group": "PlayStation",

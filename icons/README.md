@@ -1,6 +1,6 @@
 # Surge 策略组图标
 
-为当前 40 个策略组精选的 PNG 图标。配置通过各组的 `icon-url` 引用 `policy/` 下的稳定路径；`surge-icon.json` 可作为 Surge 图标订阅索引。改动图标时需同步检查配置引用和清单。所有当前图标均已在浅色卡片和深色卡片上逐项检查。
+为 40 个策略组准备的 PNG 图标。配置通过各组的 `icon-url` 引用 `policy/` 下的路径；`surge-icon.json` 可作为 Surge 图标订阅索引。新增或替换图标按 [图标规范](STANDARD.md) 执行，当前逐项结果见 [审计记录](AUDIT-2026-11-01.md)。
 
 ## 来源与许可
 
@@ -8,7 +8,7 @@
 - [Tabler Icons](https://github.com/tabler/tabler-icons/tree/ed177a085b652fe04ec4f37ced867c94621e7840)：MIT；从 SVG 调整描边颜色和粗细，渲染为 256×256 PNG，用于通用组。保留 [许可证](licenses/Tabler-Icons-MIT.txt)。
 - [Simple Icons](https://github.com/simple-icons/simple-icons/tree/90646e4bf7f3b89df6c37e65baf3e7bc759a517c)：CC0；使用 DMM 与 Netflix 的矢量图形。保留 [许可证](licenses/Simple-Icons-CC0.md)。
 - [flag-icons](https://github.com/lipis/flag-icons/tree/ac7e0eb3259eb62aa6100c435607e2fe03896a97)：MIT；区域组选用同系列 4:3 旗帜，并加细边框使白底旗帜在浅色外观中可见。保留 [许可证](licenses/Flag-Icons-MIT.txt)。
-- [Jump Desktop](https://apps.apple.com/us/app/jump-desktop-rdp-vnc-fluid/id364876095)：使用 App Store 当前展示的 512×512 产品图标。图像权利归 Phase Five Systems 所有，不受上述开源图标许可覆盖；仅用于识别 Jump Desktop 策略组。原始图像地址与校验值见 [清单](manifest.json)。
+- [Jump Desktop](https://apps.apple.com/us/app/jump-desktop-rdp-vnc-fluid/id364876095)：以 App Store 的 512×512 产品图标为原图，按规范裁出透明圆角。图像权利归 Phase Five Systems 所有，不受上述开源图标许可覆盖；仅用于识别 Jump Desktop 策略组。原始图像地址与成品校验值见 [清单](manifest.json)。
 
 逐个文件的上游路径、固定提交与 SHA-256 见 [manifest.json](manifest.json)。十个新图标同时提供 [SVG 源文件](vector/)；一个 PNG 适配深色与浅色外观，无需主题切换参数。品牌图标的商标权仍归各品牌所有；本仓库只将它们用于识别对应服务，不表示关联或背书。
 
@@ -29,4 +29,4 @@
 
 六个旗帜图标使用新的 `*-flag.png` 路径；旧区域 PNG 暂留给仍在使用旧配置的设备，不再出现在图标索引中。
 
-`JumpDesktop` 已从通用显示器图案改为产品图标，使用 `JumpDesktop-official.png` 新路径绕过旧缓存；旧 PNG 暂留给仍在使用旧配置的设备，不再出现在图标索引中。
+`JumpDesktop` 已从通用显示器图案改为产品图标，并修正官方图原有的方形直角。现用 `JumpDesktop-rounded.png`；`JumpDesktop-official.png` 和更早的 `JumpDesktop.png` 暂留给仍在使用旧配置的设备，不再出现在图标索引中。
