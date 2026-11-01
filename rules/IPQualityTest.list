@@ -3,6 +3,7 @@
 # FORMAT: ruleset-v1
 # UPDATED: 2026-11-01
 # SOURCE: https://radar.cloudflare.com/ip
+# NOTE: also includes ipinfo.io, abuseipdb.com and ipqualityscore.com; current profile uses an inline ruleset
 
 DOMAIN,radar.cloudflare.com
 DOMAIN-SUFFIX,abuseipdb.com

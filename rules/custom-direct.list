@@ -2,7 +2,8 @@
 # PURPOSE: personal direct routing
 # FORMAT: ruleset-v1
 # UPDATED: 2026-11-01
-# SOURCE: local policy; see docs/RULESET_AUDIT.md
+# SOURCE: local user policy
+# NOTE: historical public copy; current profile uses inline Rule-CustomDirect
 
 DOMAIN-SUFFIX,bytedance.com
 DOMAIN-SUFFIX,itunes.apple.com

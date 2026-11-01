@@ -22,3 +22,5 @@ IP-CIDR,192.0.2.0/24,no-resolve
 - 验证至少运行本地 `scripts/validate.py` 与 Surge 配置同步校验；推送后确认 GitHub Raw 与本地一致，再部署。静态验证不代表 iPhone 已重载或服务真实流量命中。
 
 本轮的重要依据：[Apple](https://support.apple.com/101555)、[Google FCM](https://firebase.google.com/docs/cloud-messaging/network-configuration)、[Netflix](https://openconnect.netflix.com/mobiledeliverydomains.txt)、[Telegram](https://core.telegram.org/resources/cidr.txt)、[OpenAI](https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps)、[GitHub](https://docs.github.com/en/copilot/reference/copilot-allowlist-reference)、[Steam](https://help.steampowered.com/en/faqs/view/2EA8-4D75-DA21-31EB)、[OneDrive](https://learn.microsoft.com/en-us/sharepoint/required-urls-and-ports)。其余 `SOURCE` 若指向第三方规则仓库，代表待持续核对的候选，不是官方确认。
+
+`IPQualityTest.list` 与 `custom-direct.list` 是历史公共文件；当前 iOS/Mac 主配置使用对应内联规则集。这两份文件已整理格式，但不能把它们计入当前设备的规则覆盖。

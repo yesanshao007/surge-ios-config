@@ -2,7 +2,7 @@
 # PURPOSE: conservative advertising block
 # FORMAT: ruleset-v1
 # UPDATED: 2026-11-01
-# SOURCE: local policy; see docs/RULESET_AUDIT.md
+# SOURCE: local curated policy
 
 DOMAIN,ad.mi.com
 DOMAIN,ad.qq.com
