@@ -9,51 +9,63 @@
   },
   {
     "group": "HK",
-    "file": "policy/HK.png",
-    "source": "Hawaiine/Oasisic-Icons",
-    "source_path": "icons/Country/HongKong/HongKong.png",
-    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
-    "sha256": "ccd8b7ff4375b1442e3989ea59342183f7fa68b1bfa45ade99b4a3a67f5e9019"
+    "file": "policy/HK-flag.png",
+    "source": "lipis/flag-icons",
+    "source_path": "flags/4x3/hk.svg",
+    "source_commit": "ac7e0eb3259eb62aa6100c435607e2fe03896a97",
+    "sha256": "be07843cf76dade160eabe00bb510c369a2a668e25918691f24b532e08c22131",
+    "vector": "vector/HK-flag.svg",
+    "render": "framed 4:3 flag for light/dark"
   },
   {
     "group": "SG",
-    "file": "policy/SG.png",
-    "source": "Hawaiine/Oasisic-Icons",
-    "source_path": "icons/Country/Singapore/Singapore.png",
-    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
-    "sha256": "ec84bfe57aeb6f42c981ded30bcb4ec3b7a9d4d261fd63e37dfe46864f9d65be"
+    "file": "policy/SG-flag.png",
+    "source": "lipis/flag-icons",
+    "source_path": "flags/4x3/sg.svg",
+    "source_commit": "ac7e0eb3259eb62aa6100c435607e2fe03896a97",
+    "sha256": "ff2f32d2fb79a07122c6da685b0e2be946cace8e28dc60173916ef30775cfad9",
+    "vector": "vector/SG-flag.svg",
+    "render": "framed 4:3 flag for light/dark"
   },
   {
     "group": "JP",
-    "file": "policy/JP.png",
-    "source": "Hawaiine/Oasisic-Icons",
-    "source_path": "icons/Country/Japan/Japan.png",
-    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
-    "sha256": "f26de300346cd1095d2ac78678b4cf962c59c49b76145f2eba1a5f194a69b1a3"
+    "file": "policy/JP-flag.png",
+    "source": "lipis/flag-icons",
+    "source_path": "flags/4x3/jp.svg",
+    "source_commit": "ac7e0eb3259eb62aa6100c435607e2fe03896a97",
+    "sha256": "81738aa02348f62fc3e16c8071bcf3f233c5910c3ff1dc299a562fc455127530",
+    "vector": "vector/JP-flag.svg",
+    "render": "framed 4:3 flag for light/dark"
   },
   {
     "group": "US",
-    "file": "policy/US.png",
-    "source": "Hawaiine/Oasisic-Icons",
-    "source_path": "icons/Country/US/US.png",
-    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
-    "sha256": "35ad5efd51aa71e32424360e837ea13deffb824898a0058e673fdab119611fad"
+    "file": "policy/US-flag.png",
+    "source": "lipis/flag-icons",
+    "source_path": "flags/4x3/us.svg",
+    "source_commit": "ac7e0eb3259eb62aa6100c435607e2fe03896a97",
+    "sha256": "6c6cc1e69a3b55b27b75e02a42b25aa889b6ac501bea411ab5b0ce64d3782fa6",
+    "vector": "vector/US-flag.svg",
+    "render": "framed 4:3 flag for light/dark"
   },
   {
     "group": "TW",
-    "file": "policy/TW.png",
-    "source": "Hawaiine/Oasisic-Icons",
-    "source_path": "icons/Country/CN-Taiwan/CN-Taiwan.png",
-    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
-    "sha256": "600a9aaab1d4555e36dc3419b7206bdaf79f4ac30d8af32c415625020094cfc3"
+    "file": "policy/TW-flag.png",
+    "source": "lipis/flag-icons",
+    "source_path": "flags/4x3/cn.svg",
+    "source_commit": "ac7e0eb3259eb62aa6100c435607e2fe03896a97",
+    "sha256": "edacd9d9f3ce3b5c59bc4511f2b2cd670c403dcdfb6f96338ac6dc39f5b8ab96",
+    "vector": "vector/TW-flag.svg",
+    "render": "framed 4:3 flag for light/dark"
   },
   {
     "group": "KR",
-    "file": "policy/KR.png",
-    "source": "Hawaiine/Oasisic-Icons",
-    "source_path": "icons/Country/Korea/Korea.png",
-    "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
-    "sha256": "37276b94c132bf44bee44d2d3b53b3b221feb92b8d04b48ac3fe89a16a9f72b8"
+    "file": "policy/KR-flag.png",
+    "source": "lipis/flag-icons",
+    "source_path": "flags/4x3/kr.svg",
+    "source_commit": "ac7e0eb3259eb62aa6100c435607e2fe03896a97",
+    "sha256": "c13b55e01dfc3231cd977f70b085766e6f2ec5da106b1818cc57ef46f1ed6ee6",
+    "vector": "vector/KR-flag.svg",
+    "render": "framed 4:3 flag for light/dark"
   },
   {
     "group": "OverseasOnly",
