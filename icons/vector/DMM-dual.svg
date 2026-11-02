@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
-<!-- Dual-appearance policy icon: DMM. Upstream vector provenance is in ../manifest.json. -->
-<rect x="8" y="8" width="240" height="240" rx="54" fill="#FFD66A"/>
-<g transform="translate(40 40) scale(7.3333)" fill="#171717"><path d="M9.525.46H0v23.08h11.545C17.284 23.54 24 20.916 24 12S16.026.46 9.525.46zm.646 15.073V8.34c1.746 0 4.4.079 4.4 3.582 0 3.58-2.553 3.611-4.4 3.611z"/></g>
-</svg>

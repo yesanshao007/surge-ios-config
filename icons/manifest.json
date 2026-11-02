@@ -283,16 +283,6 @@
     "sha256": "e22516cc5c33e4f28aeb12420b8f070838c1c2f88fc0470d7c44c5786faa3cbf"
   },
   {
-    "group": "DMM",
-    "file": "policy/DMM-dual.png",
-    "source": "simple-icons/simple-icons",
-    "source_path": "icons/dmm.svg",
-    "source_commit": "90646e4bf7f3b89df6c37e65baf3e7bc759a517c",
-    "sha256": "2b506098969fbecccfe43c34d9e8f52378555e3853d82f7fc7c5d8f6928fe3ab",
-    "vector": "vector/DMM-dual.svg",
-    "render": "theme-neutral rounded tile"
-  },
-  {
     "group": "TikTok",
     "file": "policy/TikTok.png",
     "source": "Hawaiine/Oasisic-Icons",

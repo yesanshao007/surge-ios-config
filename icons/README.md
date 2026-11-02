@@ -1,12 +1,12 @@
 # Surge 策略组图标
 
-为 40 个策略组准备的 PNG 图标。配置通过各组的 `icon-url` 引用 `policy/` 下的路径；`surge-icon.json` 可作为 Surge 图标订阅索引。新增或替换图标按 [图标规范](STANDARD.md) 执行，当前逐项结果见 [审计记录](AUDIT-2026-11-01.md)。
+当前索引为 39 个图标，分别对应 39 个现用策略组；`policy/` 共 50 个 PNG，其中 11 个是历史兼容资源。配置通过各组的 `icon-url` 引用 `policy/` 下的路径；`surge-icon.json` 可作为 Surge 图标订阅索引。新增或替换图标按 [图标规范](STANDARD.md) 执行，逐项结果见 [审计记录](AUDIT-2026-11-01.md)。维护 GitHub 图标前，先核对并更新仓库内全部 README。
 
 ## 来源与许可
 
 - [Oasisic-Icons](https://github.com/Hawaiine/Oasisic-Icons/tree/f0f3bc2a44616885682ee5f0e5921540b964e2d8)：MIT；原样收录品牌及系统图标。保留 [许可证](licenses/Oasisic-Icons-MIT.txt)。
 - [Tabler Icons](https://github.com/tabler/tabler-icons/tree/ed177a085b652fe04ec4f37ced867c94621e7840)：MIT；从 SVG 调整描边颜色和粗细，渲染为 256×256 PNG，用于通用组。保留 [许可证](licenses/Tabler-Icons-MIT.txt)。
-- [Simple Icons](https://github.com/simple-icons/simple-icons/tree/90646e4bf7f3b89df6c37e65baf3e7bc759a517c)：CC0；使用 DMM 与 Netflix 的矢量图形。保留 [许可证](licenses/Simple-Icons-CC0.md)。
+- [Simple Icons](https://github.com/simple-icons/simple-icons/tree/90646e4bf7f3b89df6c37e65baf3e7bc759a517c)：CC0；使用 Netflix 的矢量图形。保留 [许可证](licenses/Simple-Icons-CC0.md)。
 - [flag-icons](https://github.com/lipis/flag-icons/tree/ac7e0eb3259eb62aa6100c435607e2fe03896a97)：MIT；区域组选用同系列 4:3 旗帜，并加细边框使白底旗帜在浅色外观中可见。保留 [许可证](licenses/Flag-Icons-MIT.txt)。
 - [Jump Desktop](https://apps.apple.com/us/app/jump-desktop-rdp-vnc-fluid/id364876095)：以 App Store 的 512×512 产品图标为原图，按规范裁出透明圆角。图像权利归 Phase Five Systems 所有，不受上述开源图标许可覆盖；仅用于识别 Jump Desktop 策略组。原始图像地址与成品校验值见 [清单](manifest.json)。
 
@@ -25,7 +25,7 @@
 
 ## 深浅外观修正
 
-`DMM` 已从错误的 DMM TV 图案换成通用 DMM 标志。`AdBlock`、`Netflix`、`Amazon` 原图在深色卡片上过暗，现改为有固定底色的图标。新图使用 `*-dual.png` 路径，让客户端绕过旧 URL 的图标缓存；旧 PNG 路径暂留作尚未加载新配置的设备兼容资源，不再出现在图标索引中。
+`AdBlock`、`Netflix`、`Amazon` 原图在深色卡片上过暗，现改为有固定底色的图标。新图使用 `*-dual.png` 路径，让客户端绕过旧 URL 的图标缓存；旧 PNG 路径暂留作尚未加载新配置的设备兼容资源，不再出现在图标索引中。
 
 六个旗帜图标使用新的 `*-flag.png` 路径；旧区域 PNG 暂留给仍在使用旧配置的设备，不再出现在图标索引中。
 

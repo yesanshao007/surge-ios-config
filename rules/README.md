@@ -1,6 +1,6 @@
 # 规则集格式（ruleset-v1）
 
-本目录的 `.list` 文件一文件一目的，不写策略名。主配置负责把文件绑定到策略组。2026-11-01 已统一全部 32 个文件的格式。
+本目录的 `.list` 文件一文件一目的，不写策略名。主配置负责把文件绑定到策略组。2026-11-01 统一了原有 32 个文件的格式；清理闲置 DMM 兼容文件后现有 31 个。DMM 核心域位于 iOS 核心配置的内联 `Rule-JP`，不再有独立公共规则集。
 
 ```text
 # NAME: Service Name
@@ -20,6 +20,7 @@ IP-CIDR,192.0.2.0/24,no-resolve
 - 按 `PROCESS-NAME`、`DOMAIN`、`DOMAIN-SUFFIX`、`DOMAIN-WILDCARD`、`IP-ASN`、`IP-CIDR`、`IP-CIDR6` 排列，同类按值排序。域名小写、无末尾句点，不留重复项。
 - 修改前检查主配置优先级；具体服务要先于通用服务，直连保护要先于广告拦截。平台独有的进程规则写明适用平台。
 - 验证至少运行本地 `scripts/validate.py` 与 Surge 配置同步校验；推送后确认 GitHub Raw 与本地一致，再部署。静态验证不代表 iPhone 已重载或服务真实流量命中。
+- 维护 GitHub 公共文件时，先核对并更新仓库内全部 README；删除远程规则文件前，确认所有实际客户端已停止引用其 Raw URL。
 
 本轮的重要依据：[Apple](https://support.apple.com/101555)、[Google FCM](https://firebase.google.com/docs/cloud-messaging/network-configuration)、[Netflix](https://openconnect.netflix.com/mobiledeliverydomains.txt)、[Telegram](https://core.telegram.org/resources/cidr.txt)、[OpenAI](https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps)、[GitHub](https://docs.github.com/en/copilot/reference/copilot-allowlist-reference)、[Steam](https://help.steampowered.com/en/faqs/view/2EA8-4D75-DA21-31EB)、[OneDrive](https://learn.microsoft.com/en-us/sharepoint/required-urls-and-ports)。其余 `SOURCE` 若指向第三方规则仓库，代表待持续核对的候选，不是官方确认。
 

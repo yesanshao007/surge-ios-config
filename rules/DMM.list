@@ -1,9 +1,0 @@
-# NAME: DMM
-# PURPOSE: service-specific routing
-# FORMAT: ruleset-v1
-# UPDATED: 2026-11-01
-# SOURCE: https://support.dmm.com/accounts/article/10106
-# NOTE: compatibility for existing router rules; Surge iOS/Mac use inline Rule-JP
-
-DOMAIN-SUFFIX,dmm.co.jp
-DOMAIN-SUFFIX,dmm.com
