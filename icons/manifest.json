@@ -259,12 +259,13 @@
     "render": "theme-neutral rounded tile"
   },
   {
-    "group": "Facebook",
-    "file": "policy/Facebook.png",
+    "group": "Meta",
+    "file": "policy/Meta.png",
     "source": "Hawaiine/Oasisic-Icons",
-    "source_path": "icons/Meta/Facebook/Facebook.png",
+    "source_path": "icons/Meta/Meta/Meta.png",
     "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
-    "sha256": "87c314aecf8bcef738cd3fce09d836ea03d2857d398603c484d053544762c36b"
+    "sha256": "8a207c8ffa711acbaef317ea9d2eee10d5fb97396bb4176323ac5c0c90172e2f",
+    "render": "transparent rounded tile from upstream 512px PNG"
   },
   {
     "group": "Discord",

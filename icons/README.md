@@ -1,10 +1,10 @@
 # Surge 策略组图标
 
-当前索引为 39 个图标，分别对应 39 个现用策略组；`policy/` 共 50 个 PNG，其中 11 个是历史兼容资源。配置通过各组的 `icon-url` 引用 `policy/` 下的路径；`surge-icon.json` 可作为 Surge 图标订阅索引。新增或替换图标按 [图标规范](STANDARD.md) 执行，逐项结果见 [审计记录](AUDIT-2026-11-01.md)。维护 GitHub 图标前，先核对并更新仓库内全部 README。
+当前索引为 39 个图标，分别对应 39 个现用策略组；`policy/` 共 50 个 PNG，其中 11 个是历史兼容资源。`Meta.png` 对应整合后的 Meta 服务组；旧 `Facebook.png` 已删除。配置通过各组的 `icon-url` 引用 `policy/` 下的路径；`surge-icon.json` 可作为 Surge 图标订阅索引。新增或替换图标按 [图标规范](STANDARD.md) 执行，逐项结果见 [审计记录](AUDIT-2026-11-01.md)。维护 GitHub 图标前，先核对并更新仓库内全部 README。
 
 ## 来源与许可
 
-- [Oasisic-Icons](https://github.com/Hawaiine/Oasisic-Icons/tree/f0f3bc2a44616885682ee5f0e5921540b964e2d8)：MIT；原样收录品牌及系统图标。保留 [许可证](licenses/Oasisic-Icons-MIT.txt)。
+- [Oasisic-Icons](https://github.com/Hawaiine/Oasisic-Icons/tree/f0f3bc2a44616885682ee5f0e5921540b964e2d8)：MIT；收录品牌及系统图标。`Meta.png` 从原图制作透明圆角底板。保留 [许可证](licenses/Oasisic-Icons-MIT.txt)。
 - [Tabler Icons](https://github.com/tabler/tabler-icons/tree/ed177a085b652fe04ec4f37ced867c94621e7840)：MIT；从 SVG 调整描边颜色和粗细，渲染为 256×256 PNG，用于通用组。保留 [许可证](licenses/Tabler-Icons-MIT.txt)。
 - [Simple Icons](https://github.com/simple-icons/simple-icons/tree/90646e4bf7f3b89df6c37e65baf3e7bc759a517c)：CC0；使用 Netflix 的矢量图形。保留 [许可证](licenses/Simple-Icons-CC0.md)。
 - [flag-icons](https://github.com/lipis/flag-icons/tree/ac7e0eb3259eb62aa6100c435607e2fe03896a97)：MIT；区域组选用同系列 4:3 旗帜，并加细边框使白底旗帜在浅色外观中可见。保留 [许可证](licenses/Flag-Icons-MIT.txt)。

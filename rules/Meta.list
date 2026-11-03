@@ -1,0 +1,35 @@
+# NAME: Meta
+# PURPOSE: service-specific routing
+# FORMAT: ruleset-v1
+# UPDATED: 2026-11-03
+# SOURCE: https://www.meta.com/technologies/ ; https://faq.whatsapp.com/5913398998672934 ; https://developers.facebook.com/docs/messenger-platform/instagram/features/ig-me-links/ ; https://investor.atmeta.com/home/ ; https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Surge/Facebook ; https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Surge/Instagram ; https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Surge/Whatsapp ; https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Surge/Threads
+
+DOMAIN-SUFFIX,atmeta.com
+DOMAIN-SUFFIX,cdninstagram.com
+DOMAIN-SUFFIX,facebook.com
+DOMAIN-SUFFIX,facebook.net
+DOMAIN-SUFFIX,facebookmail.com
+DOMAIN-SUFFIX,facebookthreads.net
+DOMAIN-SUFFIX,fb.com
+DOMAIN-SUFFIX,fb.me
+DOMAIN-SUFFIX,fb.watch
+DOMAIN-SUFFIX,fbcdn.net
+DOMAIN-SUFFIX,fbsbx.com
+DOMAIN-SUFFIX,ig.me
+DOMAIN-SUFFIX,instagr.am
+DOMAIN-SUFFIX,instagram.com
+DOMAIN-SUFFIX,m.me
+DOMAIN-SUFFIX,messenger.com
+DOMAIN-SUFFIX,meta.ai
+DOMAIN-SUFFIX,meta.com
+DOMAIN-SUFFIX,oculus.com
+DOMAIN-SUFFIX,oculuscdn.com
+DOMAIN-SUFFIX,threads.com
+DOMAIN-SUFFIX,threads.net
+DOMAIN-SUFFIX,wa.me
+DOMAIN-SUFFIX,whatsapp.biz
+DOMAIN-SUFFIX,whatsapp.com
+DOMAIN-SUFFIX,whatsapp.net
+DOMAIN-SUFFIX,workplace.com
+DOMAIN-SUFFIX,workplaceusecases.com
+IP-ASN,32934,no-resolve
