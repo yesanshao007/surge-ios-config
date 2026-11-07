@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <!-- Rounded tile for the four-color Microsoft mark. Original raster provenance: ../manifest.json. -->
+  <rect width="512" height="512" rx="100" fill="#FFFFFF"/>
+  <rect x="70" y="70" width="177" height="177" fill="#F25022"/>
+  <rect x="265" y="70" width="177" height="177" fill="#7FBA00"/>
+  <rect x="70" y="265" width="177" height="177" fill="#00A4EF"/>
+  <rect x="265" y="265" width="177" height="177" fill="#FFB900"/>
+</svg>

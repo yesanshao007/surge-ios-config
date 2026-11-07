@@ -85,13 +85,12 @@
   },
   {
     "group": "AdBlock",
-    "file": "policy/AdBlock-dual.png",
-    "source": "tabler/tabler-icons",
-    "source_path": "icons/outline/ad-off.svg",
-    "source_commit": "ed177a085b652fe04ec4f37ced867c94621e7840",
-    "sha256": "274776e6c4582dc9e48f3a9152b393c2ba51ff0f3e9e2cb73d210ed95723979a",
-    "vector": "vector/AdBlock-dual.svg",
-    "render": "theme-neutral rounded tile"
+    "file": "policy/AdBlock-clear.png",
+    "source": "repo-original",
+    "source_path": "icons/vector/AdBlock-clear.svg",
+    "sha256": "625d5398a8a0e75c2a2f79c04d56ee142edc6aa92ef80e0f0c9c24325404ac4c",
+    "vector": "vector/AdBlock-clear.svg",
+    "render": "large crossed-out AD on rounded tile"
   },
   {
     "group": "Proxy",
@@ -111,11 +110,12 @@
   },
   {
     "group": "Apple",
-    "file": "policy/Apple.png",
+    "file": "policy/Apple-centered.png",
     "source": "Hawaiine/Oasisic-Icons",
     "source_path": "icons/Apple/Apple/Apple.png",
     "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
-    "sha256": "cfac7d72515f1ced550417226e4277209ac3ed89cb33a3039ce8103e986dd62d"
+    "sha256": "00ced955fa3fb50130e73c80305c5f5399fbe59a2bb750a72b6b99f90ae03ceb",
+    "render": "original raster black mark shifted 6 px right on rounded white tile"
   },
   {
     "group": "OpenAI",
@@ -210,11 +210,13 @@
   },
   {
     "group": "Microsoft",
-    "file": "policy/Microsoft.png",
+    "file": "policy/Microsoft-rounded.png",
     "source": "Hawaiine/Oasisic-Icons",
     "source_path": "icons/Microsoft/Microsoft/Microsoft.png",
     "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
-    "sha256": "819d4dced025aed73fe3771ddd9e6e62794f9018ee88b08ac69dbd23a66b0aac"
+    "sha256": "7499698e36b59088f2fa50b4905b30a6942543eb9a0dfe99d54ccee688e1d9c5",
+    "vector": "vector/Microsoft-rounded.svg",
+    "render": "four-color mark redrawn on white rounded tile"
   },
   {
     "group": "Telegram",

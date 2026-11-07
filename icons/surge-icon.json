@@ -39,7 +39,7 @@
     },
     {
       "name": "AdBlock",
-      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/AdBlock-dual.png"
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/AdBlock-clear.png"
     },
     {
       "name": "Proxy",
@@ -51,7 +51,7 @@
     },
     {
       "name": "Apple",
-      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/Apple.png"
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/Apple-centered.png"
     },
     {
       "name": "OpenAI",
@@ -99,7 +99,7 @@
     },
     {
       "name": "Microsoft",
-      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/Microsoft.png"
+      "url": "https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/icons/policy/Microsoft-rounded.png"
     },
     {
       "name": "Telegram",
