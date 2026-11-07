@@ -1,0 +1,30 @@
+#!name=常用 App 去开屏（保守版）
+#!desc=仅拦截 8 个 App 的明确开屏广告接口；不包含得物，不运行远程脚本
+#!author=yesanshao007
+#!requirement=SYSTEM = 'iOS'
+
+# Historical candidates: ddgksf2013 StartUpAds.conf, via the 2026-08-29
+# Walvez/surge-startup-ads conversion. Patterns below were narrowed and
+# rewritten for this module; current app behavior still needs device checks.
+# Do not enable together with the broad StartUpAds/Script Hub module.
+
+[URL Rewrite]
+# AcFun: flash-screen resource
+^https?:\/\/api-new\.app\.acfun\.cn\/rest\/app\/flash\/screen(?:\/|\?|$) _ reject
+# AppSo: splash resource
+^https?:\/\/sso\.ifanr\.com\/jiong\/IOS\/appso\/splash(?:\/|\?|$) _ reject
+# 贝壳找房: boot page only
+^https?:\/\/apps\.api\.ke\.com\/config\/config\/bootpage(?:\/|\?|$) _ reject
+# 豆瓣: splash resource only
+^https?:\/\/api\.douban\.com\/v2\/app_ads\/splash(?:\/|\?|$) _ reject
+# 拼多多: splash resource only
+^https?:\/\/api\.(?:pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash(?:\/|\?|$) _ reject
+# 淘宝: home splash resource only
+^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.wireless\.home\.splash\.awesome\.get(?:\/|\?|$) _ reject
+# 途家: startup picture only
+^https?:\/\/client\.tujia\.com\/bnbapp-node\/app\/portal\/getStartPictureAdvertising(?:\/|\?|$) _ reject
+# 闲鱼: splash ads only
+^https?:\/\/acs\.m\.goofish\.com\/gw\/mtop[^/?]*splash\.ads(?:\/|\?|$) _ reject
+
+[MITM]
+hostname = %APPEND% api-new.app.acfun.cn, sso.ifanr.com, apps.api.ke.com, api.douban.com, api.pinduoduo.com, api.yangkeduo.com, guide-acs.m.taobao.com, client.tujia.com, acs.m.goofish.com
