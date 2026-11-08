@@ -23,8 +23,8 @@
 ^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.wireless\.home\.splash\.awesome\.get(?:\/|\?|$) _ reject
 # 途家: startup picture only
 ^https?:\/\/client\.tujia\.com\/bnbapp-node\/app\/portal\/getStartPictureAdvertising(?:\/|\?|$) _ reject
-# 闲鱼: splash ads only
-^https?:\/\/acs\.m\.goofish\.com\/gw\/mtop[^/?]*splash\.ads(?:\/|\?|$) _ reject
+# 闲鱼: synchronous/asynchronous splash ads on the two observed Goofish gateways
+^https?:\/\/(?:g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlecommerce\.splash\.(?:async\.)?ads(?:\/|\?|$) _ reject
 # Jump 游戏玩家社区: startup ad only; preserve recommendation ad config
 ^https?:\/\/switch\.jumpvg\.com\/jump\/getlaunchad(?:\/?(?:\?|$)) _ reject
 
@@ -33,4 +33,4 @@
 cainiao-splash-clean = type=http-response, pattern=^https?:\/\/netflow-mtop\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.show\.cn(?:\/|\?|$), requires-body=true, max-size=524288, timeout=5, script-path=https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/scripts/cainiao-splash-clean.js
 
 [MITM]
-hostname = %APPEND% api-new.app.acfun.cn, sso.ifanr.com, apps.api.ke.com, netflow-mtop.cainiao.com, api.douban.com, api.pinduoduo.com, api.yangkeduo.com, guide-acs.m.taobao.com, client.tujia.com, acs.m.goofish.com, switch.jumpvg.com
+hostname = %APPEND% api-new.app.acfun.cn, sso.ifanr.com, apps.api.ke.com, netflow-mtop.cainiao.com, api.douban.com, api.pinduoduo.com, api.yangkeduo.com, guide-acs.m.taobao.com, client.tujia.com, acs.m.goofish.com, g-acs.m.goofish.com, switch.jumpvg.com
