@@ -1,0 +1,16 @@
+#!name=爱奇艺去广告（开屏与首页）
+#!desc=独立过滤已观察到的爱奇艺开屏与首页广告响应
+#!author=yesanshao007
+#!requirement=SYSTEM = 'iOS'
+
+# Keep this module independent from the conservative multi-app module.
+# The two patterns below were observed in the 2026-11-08 iQIYI HAR.
+
+[Script]
+# Splash: preserve the historical adSlots response cleanup.
+iqiyi-splash-clean = type=http-response, pattern=^https?:\/\/(?:t7z|kjp)\.cupid\.iqiyi\.com\/mixer\?, requires-body=true, max-size=1048576, timeout=5, script-path=https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/scripts/iqiyi-splash-clean.js
+# Home: remove only cards with the observed ad markers.
+iqiyi-home-clean = type=http-response, pattern=^https?:\/\/cards\.iqiyi\.com\/views_home\/3\.0\/qy_home(?:\?|$), requires-body=true, max-size=1048576, timeout=5, script-path=https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/scripts/iqiyi-home-clean.js
+
+[MITM]
+hostname = %APPEND% t7z.cupid.iqiyi.com, kjp.cupid.iqiyi.com, cards.iqiyi.com
