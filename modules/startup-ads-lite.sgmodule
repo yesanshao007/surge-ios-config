@@ -1,5 +1,5 @@
 #!name=常用 App 去开屏（保守版）
-#!desc=8 个 App 的精确启动接口重写，菜鸟仅过滤响应中的开屏条目；不包含得物
+#!desc=9 个 App 的精确启动接口重写，菜鸟仅过滤响应中的开屏条目；不包含得物
 #!author=yesanshao007
 #!requirement=SYSTEM = 'iOS'
 
@@ -25,10 +25,12 @@
 ^https?:\/\/client\.tujia\.com\/bnbapp-node\/app\/portal\/getStartPictureAdvertising(?:\/|\?|$) _ reject
 # 闲鱼: splash ads only
 ^https?:\/\/acs\.m\.goofish\.com\/gw\/mtop[^/?]*splash\.ads(?:\/|\?|$) _ reject
+# Jump 游戏玩家社区: startup ad only; preserve recommendation ad config
+^https?:\/\/switch\.jumpvg\.com\/jump\/getlaunchad(?:\/?(?:\?|$)) _ reject
 
 [Script]
 # Cainiao: preserve non-splash ads and the response envelope.
 cainiao-splash-clean = type=http-response, pattern=^https?:\/\/netflow-mtop\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.show\.cn(?:\/|\?|$), requires-body=true, max-size=524288, timeout=5, script-path=https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/scripts/cainiao-splash-clean.js
 
 [MITM]
-hostname = %APPEND% api-new.app.acfun.cn, sso.ifanr.com, apps.api.ke.com, netflow-mtop.cainiao.com, api.douban.com, api.pinduoduo.com, api.yangkeduo.com, guide-acs.m.taobao.com, client.tujia.com, acs.m.goofish.com
+hostname = %APPEND% api-new.app.acfun.cn, sso.ifanr.com, apps.api.ke.com, netflow-mtop.cainiao.com, api.douban.com, api.pinduoduo.com, api.yangkeduo.com, guide-acs.m.taobao.com, client.tujia.com, acs.m.goofish.com, switch.jumpvg.com
