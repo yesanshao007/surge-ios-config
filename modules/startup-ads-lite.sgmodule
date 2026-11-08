@@ -1,5 +1,5 @@
 #!name=常用 App 去开屏（保守版）
-#!desc=7 个 App 精确重写；闲鱼与 Jump 复用旧版 200 空白响应；菜鸟过滤开屏条目
+#!desc=7 个 App 精确重写；飞猪、闲鱼与 Jump 复用旧版 200 空白响应；菜鸟过滤开屏条目
 #!author=yesanshao007
 #!requirement=SYSTEM = 'iOS'
 
@@ -26,6 +26,9 @@
 
 [Map Local]
 # Preserve Script Hub's conversion of QX reject-200: HTTP 200 with one space.
+# 飞猪: historical Fliggy CRM splash endpoints only; current app traffic unverified.
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.allresource(?:\/|\?|$) data-type=text data=" " status-code=200
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.availablesplashstrategies(?:\/|\?|$) data-type=text data=" " status-code=200
 # 闲鱼: historical splash.ads plus newer async/g-acs variants.
 ^https?:\/\/(?:g-)?acs\.m\.goofish\.com\/gw\/mtop.*splash\.(?:async\.)?ads data-type=text data=" " status-code=200
 # Jump 游戏玩家社区: restore both historical branches, including ad_conf.
@@ -36,4 +39,4 @@
 cainiao-splash-clean = type=http-response, pattern=^https?:\/\/netflow-mtop\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.show\.cn(?:\/|\?|$), requires-body=true, max-size=524288, timeout=5, script-path=https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/scripts/cainiao-splash-clean.js
 
 [MITM]
-hostname = %APPEND% api-new.app.acfun.cn, sso.ifanr.com, apps.api.ke.com, netflow-mtop.cainiao.com, api.douban.com, api.pinduoduo.com, api.yangkeduo.com, guide-acs.m.taobao.com, client.tujia.com, acs.m.goofish.com, g-acs.m.goofish.com, switch.jumpvg.com
+hostname = %APPEND% api-new.app.acfun.cn, sso.ifanr.com, apps.api.ke.com, netflow-mtop.cainiao.com, api.douban.com, api.pinduoduo.com, api.yangkeduo.com, guide-acs.m.taobao.com, client.tujia.com, acs.m.taobao.com, acs.m.goofish.com, g-acs.m.goofish.com, switch.jumpvg.com
