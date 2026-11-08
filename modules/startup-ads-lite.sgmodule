@@ -1,5 +1,5 @@
 #!name=常用 App 去开屏（保守版）
-#!desc=9 个 App 的精确启动接口重写，菜鸟仅过滤响应中的开屏条目；不包含得物
+#!desc=7 个 App 精确重写；闲鱼与 Jump 复用旧版 200 空白响应；菜鸟过滤开屏条目
 #!author=yesanshao007
 #!requirement=SYSTEM = 'iOS'
 
@@ -23,10 +23,13 @@
 ^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.wireless\.home\.splash\.awesome\.get(?:\/|\?|$) _ reject
 # 途家: startup picture only
 ^https?:\/\/client\.tujia\.com\/bnbapp-node\/app\/portal\/getStartPictureAdvertising(?:\/|\?|$) _ reject
-# 闲鱼: synchronous/asynchronous splash ads on the two observed Goofish gateways
-^https?:\/\/(?:g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlecommerce\.splash\.(?:async\.)?ads(?:\/|\?|$) _ reject
-# Jump 游戏玩家社区: startup ad only; preserve recommendation ad config
-^https?:\/\/switch\.jumpvg\.com\/jump\/getlaunchad(?:\/?(?:\?|$)) _ reject
+
+[Map Local]
+# Preserve Script Hub's conversion of QX reject-200: HTTP 200 with one space.
+# 闲鱼: historical splash.ads plus newer async/g-acs variants.
+^https?:\/\/(?:g-)?acs\.m\.goofish\.com\/gw\/mtop.*splash\.(?:async\.)?ads data-type=text data=" " status-code=200
+# Jump 游戏玩家社区: restore both historical branches, including ad_conf.
+^https?:\/\/switch\.jumpvg\.com\/jump\/(getlaunchad|recommend\/ad_conf) data-type=text data=" " status-code=200
 
 [Script]
 # Cainiao: preserve non-splash ads and the response envelope.
