@@ -1,5 +1,5 @@
 #!name=常用 App 去开屏（保守版）
-#!desc=7 个 App 精确重写；飞猪、闲鱼与 Jump 复用旧版空白响应；菜鸟、京东过滤开屏条目
+#!desc=13 款 App 开屏候选接口；12306 按两个已知广告位返回无广告响应
 #!author=yesanshao007
 #!requirement=SYSTEM = 'iOS'
 
@@ -35,10 +35,12 @@
 ^https?:\/\/switch\.jumpvg\.com\/jump\/(getlaunchad|recommend\/ad_conf) data-type=text data=" " status-code=200
 
 [Script]
+# 12306: request body identifies the two historical splash placements.
+railway12306-splash-clean = type=http-request, pattern=^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList(?:\?|$), requires-body=true, max-size=65536, timeout=5, script-path=https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/scripts/12306-splash-clean.js
 # Cainiao: preserve non-splash ads and the response envelope.
 cainiao-splash-clean = type=http-response, pattern=^https?:\/\/netflow-mtop\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.show\.cn(?:\/|\?|$), requires-body=true, max-size=524288, timeout=5, script-path=https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/scripts/cainiao-splash-clean.js
 # JD: only adjust marked startup images; keep the rest of the start response.
 jd-splash-clean = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start(?:&|$), requires-body=true, max-size=1048576, timeout=5, script-path=https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/scripts/jd-splash-clean.js
 
 [MITM]
-hostname = %APPEND% api-new.app.acfun.cn, sso.ifanr.com, apps.api.ke.com, netflow-mtop.cainiao.com, api.douban.com, api.pinduoduo.com, api.yangkeduo.com, guide-acs.m.taobao.com, client.tujia.com, acs.m.taobao.com, acs.m.goofish.com, g-acs.m.goofish.com, switch.jumpvg.com, api.m.jd.com
+hostname = %APPEND% api-new.app.acfun.cn, sso.ifanr.com, apps.api.ke.com, netflow-mtop.cainiao.com, api.douban.com, api.pinduoduo.com, api.yangkeduo.com, guide-acs.m.taobao.com, client.tujia.com, acs.m.taobao.com, acs.m.goofish.com, g-acs.m.goofish.com, switch.jumpvg.com, api.m.jd.com, ad.12306.cn
