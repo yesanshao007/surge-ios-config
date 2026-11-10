@@ -1,5 +1,5 @@
 #!name=常用 App 去开屏（保守版）
-#!desc=14 款 App 开屏候选接口；12306 按广告位响应，航旅纵横复用旧版空白响应
+#!desc=9 款正在使用的 App 开屏候选接口；12306 按广告位响应
 #!author=yesanshao007
 #!requirement=SYSTEM = 'iOS'
 
@@ -9,20 +9,10 @@
 # Do not enable together with the broad StartUpAds/Script Hub module.
 
 [URL Rewrite]
-# AcFun: flash-screen resource
-^https?:\/\/api-new\.app\.acfun\.cn\/rest\/app\/flash\/screen(?:\/|\?|$) _ reject
-# AppSo: splash resource
-^https?:\/\/sso\.ifanr\.com\/jiong\/IOS\/appso\/splash(?:\/|\?|$) _ reject
-# 贝壳找房: boot page only
-^https?:\/\/apps\.api\.ke\.com\/config\/config\/bootpage(?:\/|\?|$) _ reject
-# 豆瓣: splash resource only
-^https?:\/\/api\.douban\.com\/v2\/app_ads\/splash(?:\/|\?|$) _ reject
 # 拼多多: splash resource only
 ^https?:\/\/api\.(?:pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash(?:\/|\?|$) _ reject
 # 淘宝: home splash resource only
 ^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.wireless\.home\.splash\.awesome\.get(?:\/|\?|$) _ reject
-# 途家: startup picture only
-^https?:\/\/client\.tujia\.com\/bnbapp-node\/app\/portal\/getStartPictureAdvertising(?:\/|\?|$) _ reject
 
 [Map Local]
 # Preserve Script Hub's conversion of QX reject-200: HTTP 200 with one space.
@@ -45,4 +35,4 @@ cainiao-splash-clean = type=http-response, pattern=^https?:\/\/netflow-mtop\.cai
 jd-splash-clean = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start(?:&|$), requires-body=true, max-size=1048576, timeout=5, script-path=https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/scripts/jd-splash-clean.js
 
 [MITM]
-hostname = %APPEND% api-new.app.acfun.cn, sso.ifanr.com, apps.api.ke.com, netflow-mtop.cainiao.com, api.douban.com, api.pinduoduo.com, api.yangkeduo.com, guide-acs.m.taobao.com, client.tujia.com, acs.m.taobao.com, acs.m.goofish.com, g-acs.m.goofish.com, switch.jumpvg.com, api.m.jd.com, ad.12306.cn, discardrp.umetrip.com, startup.umetrip.com
+hostname = %APPEND% netflow-mtop.cainiao.com, api.pinduoduo.com, api.yangkeduo.com, guide-acs.m.taobao.com, acs.m.taobao.com, acs.m.goofish.com, g-acs.m.goofish.com, switch.jumpvg.com, api.m.jd.com, ad.12306.cn, discardrp.umetrip.com, startup.umetrip.com
