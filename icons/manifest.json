@@ -110,12 +110,12 @@
   },
   {
     "group": "Apple",
-    "file": "policy/Apple-centered.png",
+    "file": "policy/Apple-balanced.png",
     "source": "Hawaiine/Oasisic-Icons",
     "source_path": "icons/Apple/Apple/Apple.png",
     "source_commit": "f0f3bc2a44616885682ee5f0e5921540b964e2d8",
-    "sha256": "00ced955fa3fb50130e73c80305c5f5399fbe59a2bb750a72b6b99f90ae03ceb",
-    "render": "original raster black mark shifted 6 px right on rounded white tile"
+    "sha256": "71d37f16d05a7ebc09b17746282fd2f049951e3448ddb60f46f5de708dc6b64e",
+    "render": "black mark from original raster; dx=6 px, scale=0.78 about canvas center, dy=-22 px; rounded white tile"
   },
   {
     "group": "OpenAI",

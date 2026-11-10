@@ -1,6 +1,6 @@
 # Surge 策略组图标
 
-当前索引为 39 个图标，分别对应 39 个现用策略组；`policy/` 共 53 个 PNG，其中 14 个是历史兼容资源。`Meta.png` 对应整合后的 Meta 服务组；旧 `Facebook.png` 已删除。配置通过各组的 `icon-url` 引用 `policy/` 下的路径；`surge-icon.json` 可作为 Surge 图标订阅索引。新增或替换图标按 [图标规范](STANDARD.md) 执行，逐项结果见 [审计记录](AUDIT-2026-11-01.md)。维护 GitHub 图标前，先核对并更新仓库内全部 README。
+当前索引为 39 个图标，分别对应 39 个现用策略组；`policy/` 共 54 个 PNG，其中 15 个是历史兼容资源。`Meta.png` 对应整合后的 Meta 服务组；旧 `Facebook.png` 已删除。配置通过各组的 `icon-url` 引用 `policy/` 下的路径；`surge-icon.json` 可作为 Surge 图标订阅索引。新增或替换图标按 [图标规范](STANDARD.md) 执行，逐项结果见 [审计记录](AUDIT-2026-11-01.md)。维护 GitHub 图标前，先核对并更新仓库内全部 README。
 
 ## 来源与许可
 
@@ -9,7 +9,7 @@
 - [Simple Icons](https://github.com/simple-icons/simple-icons/tree/90646e4bf7f3b89df6c37e65baf3e7bc759a517c)：CC0；使用 Netflix 的矢量图形。保留 [许可证](licenses/Simple-Icons-CC0.md)。
 - [flag-icons](https://github.com/lipis/flag-icons/tree/ac7e0eb3259eb62aa6100c435607e2fe03896a97)：MIT；区域组选用同系列 4:3 旗帜，并加细边框使白底旗帜在浅色外观中可见。保留 [许可证](licenses/Flag-Icons-MIT.txt)。
 - [Jump Desktop](https://apps.apple.com/us/app/jump-desktop-rdp-vnc-fluid/id364876095)：以 App Store 的 512×512 产品图标为原图，按规范裁出透明圆角。图像权利归 Phase Five Systems 所有，不受上述开源图标许可覆盖；仅用于识别 Jump Desktop 策略组。原始图像地址与成品校验值见 [清单](manifest.json)。
-- `AdBlock-clear.svg` 是本仓库用基本几何图形和文字制作的禁用广告图案；`Microsoft-rounded.svg` 依据已收录的四色标志重绘圆角底板。`Apple-centered.png` 从仓库保留的原图提取黑色标志并向右平移 6 px。处理方式与校验值见 [清单](manifest.json)。
+- `AdBlock-clear.svg` 是本仓库用基本几何图形和文字制作的禁用广告图案；`Microsoft-rounded.svg` 依据已收录的四色标志重绘圆角底板。现用 `Apple-balanced.png` 由保留的 Apple 原图提取黑色标志，在圆角白底上缩小并上移，以修正 iPhone 深色卡片中显得偏下的问题。处理方式与校验值见 [清单](manifest.json)。
 
 逐个文件的上游路径、固定提交与 SHA-256 见 [manifest.json](manifest.json)。部分图标同时提供 [SVG 源文件](vector/)；一个 PNG 适配深色与浅色外观，无需主题切换参数。品牌图标的商标权仍归各品牌所有；本仓库只将它们用于识别对应服务，不表示关联或背书。
 
@@ -32,4 +32,4 @@
 
 `JumpDesktop` 已从通用显示器图案改为产品图标，并修正官方图原有的方形直角。现用 `JumpDesktop-rounded.png`；`JumpDesktop-official.png` 和更早的 `JumpDesktop.png` 暂留给仍在使用旧配置的设备，不再出现在图标索引中。
 
-`Microsoft` 改用白色透明圆角底板，保留四色标志；`Apple` 在原白色圆角底板内微调黑色标志的视觉位置；`AdBlock` 改用更清楚的禁用广告图案。三者采用新文件名绕开旧图标缓存，原路径暂留供旧配置使用，不再进入现用索引。图标修改只影响策略组显示，不改变分流。
+`Microsoft` 改用白色透明圆角底板，保留四色标志；`AdBlock` 改用更清楚的禁用广告图案。`Apple-centered.png` 的小幅横移经 iPhone 截图验收后仍显得偏下，现改用 `Apple-balanced.png`；旧路径暂留供旧配置使用，不再进入现用索引。图标修改只影响策略组显示，不改变分流。
