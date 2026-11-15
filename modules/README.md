@@ -18,6 +18,12 @@
 
 启用前先停用原墨鱼/Script Hub 去开屏模块。旧模块若继续启用，其得物重写与 `app.dewu.com` MITM 仍然存在。随后在 Surge iOS 从 URL 安装本模块，确认 MITM 已开启、证书已信任，彻底退出目标 App 后重新打开。先核对得物可正常使用，再逐个检查需要去开屏的 App；若有异常，先关闭本模块并重试。详情见本地 `docs/IOS_SETUP.md`。
 
+## 智行火车票去开屏（独立候选）
+
+安装地址：`https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/modules/zhixing-splash.sgmodule`
+
+仅匹配 `m.ctrip.com/restapi/soa2/13916/scjson/tripAds`，返回 HTTP 200 与空 JSON。接口和响应取自[近期智行专用 Surge 模块](https://github.com/fmz200/wool_scripts/blob/main/Surge/module/split/partZ/ZhiXingAPP.sgmodule)；该来源明确提示可能影响携程部分功能，因此单独安装、单独关闭，不加入常用 App 模块，也不使用旧规则中宽泛的 `restapi/.*Ads` 匹配。尚无本机智行冷启动 HAR，不能确认当前版本是否请求此接口或广告是否消失。若携程或智行的正常功能异常，先关闭本模块并复测。
+
 ## 爱奇艺去广告（独立版）
 
 安装地址：`https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/modules/iqiyi-ads.sgmodule`

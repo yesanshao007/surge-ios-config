@@ -1,0 +1,12 @@
+#!name=智行火车票去开屏（候选）
+#!desc=仅处理智行公开规则中的 tripAds 接口；可能影响携程部分功能
+#!author=yesanshao007
+#!requirement=SYSTEM = 'iOS'
+
+# Source: fmz200/wool_scripts ZhiXingAPP.sgmodule (2026-11-11).
+# No current-device HAR yet. Keep this separate because m.ctrip.com is shared.
+[Map Local]
+^https?:\/\/m\.ctrip\.com\/restapi\/soa2\/13916\/scjson\/tripAds(?:\?|$) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+[MITM]
+hostname = %APPEND% m.ctrip.com
