@@ -1,5 +1,5 @@
 #!name=常用 App 去开屏（保守版）
-#!desc=10 款按需使用的 App 开屏候选接口；大麦仅处理历史欢迎页接口
+#!desc=12 款按需使用的 App 开屏候选接口；大麦仅处理历史欢迎页接口
 #!author=yesanshao007
 #!requirement=SYSTEM = 'iOS'
 
@@ -13,6 +13,8 @@
 ^https?:\/\/api\.(?:pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash(?:\/|\?|$) _ reject
 # 淘宝: home splash resource only
 ^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.wireless\.home\.splash\.awesome\.get(?:\/|\?|$) _ reject
+# 掌通家园: historical app-open ad endpoint only; exclude broader ad domains.
+^https?:\/\/api\.szy\.cn\/appOpenServer\/ad(?:\?|$) _ reject
 
 [Map Local]
 # Preserve Script Hub's conversion of QX reject-200: HTTP 200 with one space.
@@ -27,6 +29,8 @@
 ^https?:\/\/switch\.jumpvg\.com\/jump\/(getlaunchad|recommend\/ad_conf) data-type=text data=" " status-code=200
 # 航旅纵横: historical startup hosts and native endpoint only.
 ^https?:\/\/(?:discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native(?:\?|$) data-type=text data=" " status-code=200
+# 小米音箱: historical splash endpoint only; current app traffic unverified.
+^https?:\/\/marketing-aibox\.v\.mitvos\.com\/advertise\/splash(?:\?|$) data-type=text data=" " status-code=200
 
 [Script]
 # 12306: request body identifies the two historical splash placements.
@@ -37,4 +41,4 @@ cainiao-splash-clean = type=http-response, pattern=^https?:\/\/netflow-mtop\.cai
 jd-splash-clean = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start(?:&|$), requires-body=true, max-size=1048576, timeout=5, script-path=https://raw.githubusercontent.com/yesanshao007/surge-ios-config/276e7c93ffcc157dcfdc4659a9d48414f3ca293d/scripts/jd-splash-clean.js
 
 [MITM]
-hostname = %APPEND% netflow-mtop.cainiao.com, api.pinduoduo.com, api.yangkeduo.com, guide-acs.m.taobao.com, acs.m.taobao.com, acs.m.goofish.com, g-acs.m.goofish.com, switch.jumpvg.com, api.m.jd.com, ad.12306.cn, discardrp.umetrip.com, startup.umetrip.com
+hostname = %APPEND% netflow-mtop.cainiao.com, api.pinduoduo.com, api.yangkeduo.com, guide-acs.m.taobao.com, acs.m.taobao.com, acs.m.goofish.com, g-acs.m.goofish.com, switch.jumpvg.com, api.m.jd.com, ad.12306.cn, discardrp.umetrip.com, startup.umetrip.com, marketing-aibox.v.mitvos.com, api.szy.cn
