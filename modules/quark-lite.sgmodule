@@ -4,7 +4,7 @@
 #!requirement=SYSTEM = 'iOS'
 
 [Script]
-quark-cms-clean = type=http-response, pattern=^https?:\/\/open-cms-api\.(?:uc|quark)\.cn\/open-cms(?:\/|\?|$), requires-body=true, max-size=1048576, timeout=5, script-path=https://raw.githubusercontent.com/yesanshao007/surge-ios-config/main/scripts/quark-clean.js
+quark-cms-clean = type=http-response, pattern=^https?:\/\/open-cms-api\.(?:uc|quark)\.cn\/open-cms(?:\/|\?|$), requires-body=true, max-size=1048576, timeout=5, script-path=https://raw.githubusercontent.com/yesanshao007/surge-ios-config/276e7c93ffcc157dcfdc4659a9d48414f3ca293d/scripts/quark-clean.js
 
 [MITM]
 hostname = %APPEND% open-cms-api.uc.cn, open-cms-api.quark.cn
